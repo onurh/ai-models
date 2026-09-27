@@ -34,34 +34,36 @@ The patterns this matrix follows. Stay faithful to these definitions when adding
 | `voice` 🎙️ | Native speech-to-speech |
 | `cheap-volume` | Earns its place mostly on high-volume cheap work |
 | `long-context` | 500K+ token context |
+| `multilingual` | Holds register and idiom across languages (not just English) |
+
+**Tags are earned, not copied.** A model carries a tag when it passes the matching tasks in `evals/` (see §Score schema). Marketing claims alone don't grant tags.
 
 ## Filling rules
 
 1. **If a price is unknown, write `null` — never guess.** A wrong price is worse than a missing one.
 2. **Only list modalities that actually ship.** "Coming soon" does not enter the list.
 3. **`status: sunset` models don't stay in the table** — only note them where a migration plan is needed.
-4. The README is a **single table** sorted by provider (provider in the leading column), flagship first within each provider. Don't split into per-provider tables.
+4. The README main board is **grouped by output type** (Text-out · Image-out · Video-out · Audio), provider as a leading column within each group, flagship first. Don't regroup by provider.
 5. Update `source_date` with every change.
 
-## Score schema (benchmarks.yaml)
+## Score schema (evals/results.yaml — our own runs)
 
-Benchmarks are a **classification dimension of the main board**, not a separate leaderboard. Each score row:
+We don't track public leaderboard numbers. Every score in this repo comes from our own task suite (`evals/tasks.yaml`) run through `evals/run.py`. Each results row:
 
 | Field | Type | Rule |
 |---|---|---|
-| `benchmark` | string | Board name, e.g. `SWE-bench Verified` |
-| `version` | string | Board revision — required, scores across versions are not comparable |
-| `category` | enum | `coding` · `reasoning` · `science` · `agentic` · `composite` · `image` · `video` |
-| `model` | string | The `id` key from models.yaml. Reference models not in the pricing matrix keep their kebab-case id here only |
-| `score` | float | In `unit` |
-| `unit` | string | `%` or `index` |
-| `source` | enum | `independent` (third-party run) · `vendor` (self-reported, own scaffold) — **never omit** |
-| `harness` | string \| null | Eval harness if known (e.g. `Scale SEAL`, `vals.ai`) |
-| `date` | string | `YYYY-MM` the score was published |
+| `model` | string | The `id` key from models.yaml |
+| `task` | string | Task id from evals/tasks.yaml |
+| `capability` | string | The task's capability — must exist in the tag set |
+| `score` | float | `1.0` pass / `0.0` fail |
+| `grader` | enum | `exact` · `contains` · `regex` · `judge` · `human` |
+| `judge_model` | string \| null | Required when `grader: judge` — declare who graded |
+| `date` | string | `YYYY-MM` of the run |
 
 ### Score rules
 
-1. **`source` is mandatory.** Vendor scores inflate (SWE-Pro vendor board 80% vs SEAL 61.5%); readers must be able to tell them apart at a glance.
-2. **Never compare across columns** of the README benchmark matrix — only within one board and version.
-3. **Empty cell ≠ weakness.** No public number just means not evaluated; never infer.
-4. Benchmarks are prompts/tests: a score classifies a model, it doesn't rank the model absolutely. A model qualifies for a tag (e.g. `coding`) when its board standing supports it — that's the only role scores play here.
+1. **Only real runs enter `results.yaml`.** No hand-typed scores, no "expected" values, no imported leaderboards.
+2. **Raw outputs are kept** in `evals/outputs/<model>/<task>.txt` — every score is auditable and re-gradable.
+3. **Fixed suite.** Don't swap tasks between models mid-comparison; suite changes bump `tasks.yaml` `version` and reset the matrix.
+4. **Empty cell = not run yet**, not weakness — the fix is to run it.
+5. A tag is justified when the model passes that capability's tasks; remove the tag (with a note) when it fails.
