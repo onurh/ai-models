@@ -46,24 +46,19 @@ The patterns this matrix follows. Stay faithful to these definitions when adding
 4. The README main board is **grouped by output type** (Text-out · Image-out · Video-out · Audio), provider as a leading column within each group, flagship first. Don't regroup by provider.
 5. Update `source_date` with every change.
 
-## Score schema (evals/results.yaml — our own runs)
+## Benchmark observations (evals/)
 
-We don't track public leaderboard numbers. Every score in this repo comes from our own task suite (`evals/tasks.yaml`) run through `evals/run.py`. Each results row:
+The benchmark is manual and deliberately simple — prompts in `evals/prompts/`, raw outputs in `evals/outputs/<model-id>/`, one observation row per run in `evals/results.md`:
 
-| Field | Type | Rule |
-|---|---|---|
-| `model` | string | The `id` key from models.yaml |
-| `task` | string | Task id from evals/tasks.yaml |
-| `capability` | string | The task's capability — must exist in the tag set |
-| `score` | float | `1.0` pass / `0.0` fail |
-| `grader` | enum | `exact` · `contains` · `regex` · `judge` · `human` |
-| `judge_model` | string \| null | Required when `grader: judge` — declare who graded |
-| `date` | string | `YYYY-MM` of the run |
+| Field | Rule |
+|---|---|
+| date | `YYYY-MM-DD` |
+| model | The `id` key from models.yaml |
+| prompt | The prompt `id` from the prompt file's frontmatter |
+| observation | One concrete sentence — what worked, what broke |
 
-### Score rules
+### Observation rules
 
-1. **Only real runs enter `results.yaml`.** No hand-typed scores, no "expected" values, no imported leaderboards.
-2. **Raw outputs are kept** in `evals/outputs/<model>/<task>.txt` — every score is auditable and re-gradable.
-3. **Fixed suite.** Don't swap tasks between models mid-comparison; suite changes bump `tasks.yaml` `version` and reset the matrix.
-4. **Empty cell = not run yet**, not weakness — the fix is to run it.
-5. A tag is justified when the model passes that capability's tasks; remove the tag (with a note) when it fails.
+1. **No output saved, no observation.** Comparisons happen over real outputs, not memory.
+2. **Concrete beats verdict.** "Broke constraint 2 silently" beats "bad".
+3. Observations inform tags over time — a tag shifts when a pattern of observations justifies it, not from a single run.

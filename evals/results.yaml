@@ -1,7 +1,0 @@
-# Our benchmark results — one row per (model, task) run.
-# Schema: ../SCHEMA.md §Score schema (own-run variant).
-# score: 1.0 pass / 0.0 fail. Graded by: exact, contains, regex, judge (LLM), or human.
-# This file starts EMPTY — rows appear only from real runs of evals/run.py.
-
-version: "1"
-runs: []

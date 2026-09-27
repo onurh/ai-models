@@ -62,13 +62,9 @@ The main comparison block — pricing, context, and tags are comparable across t
 
 ## Our benchmark ([`evals/`](evals/))
 
-We don't trust leaderboards — we run our own. [`evals/tasks.yaml`](evals/tasks.yaml) is our fixed task suite (coding, reasoning, instruction-following, long-context, tool-use, Turkish); [`evals/run.py`](evals/run.py) runs any model in the matrix against it through one OpenRouter key and grades the outputs; results land in [`evals/results.yaml`](evals/results.yaml) and feed back into the tags above. Details and how to run: [evals/README.md](evals/README.md).
+Not a leaderboard — a test bench. Same prompt, different models, outputs saved side by side so we can see which method works better on which model. The flow: pick a prompt from [`evals/prompts/`](evals/prompts/), paste it into the model, save the output under `evals/outputs/<model-id>/`, log a one-line observation in [`evals/results.md`](evals/results.md). Details: [evals/README.md](evals/README.md).
 
-Current standings (from our own runs — empty until we run):
-
-| Task | gpt-6-astra | claude-opus-5-5 | gemini-3-8-flash | kimi-k3 | … |
-|---|---|---|---|---|---|
-| *see evals/results.yaml* | | | | | |
+Current observations: see [evals/results.md](evals/results.md) — empty until we start pasting outputs.
 
 ---
 
