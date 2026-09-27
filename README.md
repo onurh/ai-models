@@ -81,6 +81,8 @@ Provider notes:
 | `openai-tts` | OpenAI | OpenAI TTS | 2025 | $15–30 per 1M chars | text | audio | `tts-1` $15 · `tts-1-hd` $30 per 1M chars; `gpt-4o-mini-tts` ~$0.015/min token-based |
 | `gemini-3-8-live` | Google | Gemini 3.8 Live (Extended Thinking) | 2026-09 | $0.005/min in · $0.018/min out | audio | audio | Native speech-to-speech; #1 on the AA S2S quality index (82.6) |
 | `google-chirp3-hd` | Google | Cloud TTS (Chirp 3 HD) | 2025 | $30 per 1M chars | text | audio | Google Cloud voice library, 60+ languages |
+| `gemini-3-8-flash-tts` | Google | Gemini 3.8 Flash TTS | 2026-09 | $0.50/1M in · $9/1M audio out | text | audio | Token-based TTS (25 tokens/sec audio); promo through 2026-12-31 then $1/$18; AA Speech Elo ~1,260 |
+| `grok-tts` | xAI | Grok TTS | 2026 | $15 per 1M chars | text | audio | xAI voice line, ~$0.015/min |
 | `elevenlabs-v3` | ElevenLabs | ElevenLabs v3 | 2026 | $0.10 per 1K chars | text | audio | Expressive TTS, voice cloning, dubbing; Flash tier $0.05/1K; strong multilingual incl. Turkish |
 
 ---

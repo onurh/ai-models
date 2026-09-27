@@ -437,6 +437,24 @@ providers:
     best_for: Google Cloud voice library, 60+ languages
     source_date: 2026-09
     notes: $30/1M characters; 1M free chars/month
+  - id: gemini-3-8-flash-tts
+    model: Gemini 3.8 Flash TTS
+    released: 2026-09
+    status: ga
+    context_tokens: null
+    price_input: 0.5
+    price_output: 9.0
+    billing_unit: per_1m_tokens
+    input:
+    - text
+    output:
+    - audio
+    tags:
+    - voice
+    open_weights: false
+    best_for: Token-based TTS; AA Speech Arena Elo ~1,260
+    notes: Audio metered at 25 tokens/sec; promo rates through 2026-12-31, then $1/$18; ~$16.50/1M chars per AA estimate
+    source_date: 2026-09
 - name: xAI
   models:
   - id: grok-4-7
@@ -476,6 +494,24 @@ providers:
     tags: []
     open_weights: false
     best_for: Image generation + image-to-video
+    source_date: 2026-09
+  - id: grok-tts
+    model: Grok TTS
+    released: '2026'
+    status: ga
+    context_tokens: null
+    price_input: 15.0
+    price_output: null
+    billing_unit: per_1m_chars
+    input:
+    - text
+    output:
+    - audio
+    tags:
+    - voice
+    open_weights: false
+    best_for: xAI voice line, ~$0.015/min
+    notes: $15/1M characters
     source_date: 2026-09
 - name: Moonshot AI
   models:
