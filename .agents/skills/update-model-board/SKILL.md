@@ -16,7 +16,11 @@ The README main board is **grouped by output type**, provider as leading column 
 3. **Video-output models** — same reduced set
 4. **Audio models** — ID, Provider, Model, Released, Billing, Input, Output, Notes
 
-Ordering within a group: provider blocks in fixed order (OpenAI → Anthropic → Google → xAI → Moonshot → specialist vendors); within a block, premium tier first (flagship → mid → budget); same tier, newest Released first; struck-through rows sink to the bottom.
+Ordering within a group: provider blocks in fixed order (OpenAI → Anthropic → Google → xAI → Moonshot → DeepSeek → specialist vendors); within a block, premium tier first (flagship → mid → budget); same tier, newest Released first; struck-through rows sink to the bottom.
+
+## Provider admission
+
+Restrictive by design. The board carries only the most widely known providers: the frontier LLM labs, plus at most one clear category leader per niche (currently ElevenLabs for TTS). Decline niche or second-tier vendors even when well-documented — a curated shortlist beats a directory. If a provider isn't obviously household-name in the AI community, it doesn't enter.
 
 Below the tables: benchmark section (points to `evals/`), selection guide, files list. Keep that order.
 

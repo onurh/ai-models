@@ -43,8 +43,9 @@ The patterns this matrix follows. Stay faithful to these definitions when adding
 1. **If a price is unknown, write `null` — never guess.** A wrong price is worse than a missing one.
 2. **Only list modalities that actually ship.** "Coming soon" does not enter the list.
 3. **`status: sunset` and superseded models stay in the table with a strikethrough** — visibility for history, but clearly unselectable. This sector moves fast; struck rows are how the board shows its age honestly. Remove them only after ~2 generations.
-4. The README main board is **grouped by output type** (Text · Image · Video · Audio). Ordering within a group: (a) provider blocks in fixed order — OpenAI, Anthropic, Google, xAI, Moonshot, then specialist vendors; (b) within a provider block, tier order premium-first (flagship → mid → budget); (c) same tier, newest `released` first; (d) struck-through rows sink to the bottom. Every README table carries a **Released** column (`YYYY-MM`, year only if the month is unconfirmed).
-5. Update `source_date` with every change.
+4. The README main board is **grouped by output type** (Text · Image · Video · Audio). Ordering within a group: (a) provider blocks in fixed order — OpenAI, Anthropic, Google, xAI, Moonshot, DeepSeek, then specialist vendors; (b) within a provider block, tier order premium-first (flagship → mid → budget); (c) same tier, newest `released` first; (d) struck-through rows sink to the bottom. Every README table carries a **Released** column (`YYYY-MM`, year only if the month is unconfirmed).
+5. **Provider admission is restrictive.** The board lists only the most widely known providers — the frontier LLM labs plus at most one clear category leader per niche (e.g. ElevenLabs for TTS). Niche or second-tier vendors are out of scope; this is a curated shortlist, not a directory.
+6. Update `source_date` with every change.
 
 ## Benchmark observations (evals/)
 

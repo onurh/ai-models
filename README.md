@@ -18,7 +18,7 @@ Column definitions and data rules are in [SCHEMA.md](SCHEMA.md).
 
 Within each output-type group:
 
-1. Provider blocks in fixed order: OpenAI, Anthropic, Google, xAI, Moonshot; specialist vendors (ElevenLabs, Microsoft, Cartesia, Play.ht) after.
+1. Provider blocks in fixed order: OpenAI, Anthropic, Google, xAI, Moonshot, DeepSeek; specialist vendors (e.g. ElevenLabs) last.
 2. Within a provider block: tier order, premium first (flagship → mid → budget).
 3. Same tier: newest release first.
 4. Struck-through rows always sink to the bottom of their group.
@@ -40,8 +40,10 @@ Within each output-type group:
 | `grok-4-7` | xAI | Grok 4.7 | 2026-09 | 500K | 2.00 | 6.00 | text, image, file | agent, coding; cache hits $0.50 |
 | `kimi-k3` | Moonshot AI | Kimi K3 | 2026-07 | 1M | 2.20* | 8.00* | text, image, video, file | reasoning, agent, coding; open weights (2.8T MoE) |
 | `kimi-k2-8-preview` | Moonshot AI | Kimi K2.8 Preview | 2026-09 | 1M | 0.60* | 2.50* | text, image, video | agent, coding |
+| `deepseek-v4-pro` | DeepSeek | DeepSeek V4 Pro | 2026-08 | 1M | 0.66* | 1.98* | text | reasoning, agent, coding; open weights (1.6T MoE, MIT) |
+| `deepseek-v4-1-flash` | DeepSeek | DeepSeek V4.1 Flash | 2026-09 | 1M | 0.15* | 0.60* | text, image | agent, coding, cheap-volume; open weights (552B MoE, MIT); native vision |
 
-\* Approximate; cached input is cheaper. Kimi K3 is open-weight under its own license and can be self-hosted.
+\* Approximate or off-peak rates (DeepSeek peak hours are 2×); cached input is cheaper. Kimi K3, DeepSeek V4 Pro, and V4.1 Flash are open-weight and can be self-hosted.
 
 Provider notes:
 
@@ -73,9 +75,6 @@ Provider notes:
 | `gemini-3-8-live` | Google | Gemini 3.8 Live (Extended Thinking) | 2026-09 | per minute | audio | audio | Native speech-to-speech; #1 on the AA S2S quality index (82.6) |
 | `google-chirp3-hd` | Google | Cloud TTS (Chirp 3 HD) | 2025 | per 1M chars | text | audio | Google Cloud voice library, 60+ languages |
 | `elevenlabs-v3` | ElevenLabs | ElevenLabs v3 | 2026 | per 1K chars | text | audio | Expressive TTS, voice cloning, dubbing; strong multilingual incl. Turkish |
-| `azure-speech-hd` | Microsoft | Azure Speech (HD voices) | 2025 | per hour / chars | text | audio | Enterprise TTS + real-time avatar; per-hour billing on some plans |
-| `cartesia-sonic` | Cartesia | Sonic | 2025 | per 1K chars | text | audio | Low-latency streaming TTS (~100 ms) |
-| `playht-v3` | Play.ht | Play v3 | 2025 | per 1K chars | text | audio | Multi-lingual TTS with voice cloning |
 
 ---
 
