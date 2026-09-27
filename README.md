@@ -103,3 +103,7 @@ The benchmark is a small, manual test bench rather than a leaderboard. Prompts l
 - [models.yaml](models.yaml) — machine-readable version of the pricing and modality matrix
 - [evals/](evals/) — benchmark prompts, saved outputs, and observation log
 - [SCHEMA.md](SCHEMA.md) — field definitions and data rules
+
+---
+
+Maintained with [Kimi](https://www.kimi.com) (K2.8).
