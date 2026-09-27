@@ -1,12 +1,15 @@
 # AI model comparison data — September 2026
 # Schema: SCHEMA.md. Prices in USD/1M tokens (see billing_unit).
+# `id` is the normalized kebab-case join key used across all files in this repo.
+# Platform-specific model strings may differ (OpenRouter, Azure, Bedrock...) — verify per platform.
 # This file is for agents and scripts; humans should read the README.md tables.
 
 providers:
 
   - name: OpenAI
     models:
-      - model: GPT-6 Astra
+      - id: gpt-6-astra
+        model: GPT-6 Astra
         released: "2026-09"
         status: ga
         context_tokens: 1050000
@@ -21,7 +24,8 @@ providers:
         notes: "Cache reads ~$1/1M"
         source_date: "2026-09"
 
-      - model: GPT-6 Sol
+      - id: gpt-6-sol
+        model: GPT-6 Sol
         released: "2026-09"
         status: ga
         context_tokens: 1050000
@@ -34,7 +38,8 @@ providers:
         best_for: "Coding and agent work at half of Astra's price"
         source_date: "2026-09"
 
-      - model: GPT-6 Luna
+      - id: gpt-6-luna
+        model: GPT-6 Luna
         released: "2026-09"
         status: ga
         context_tokens: 1050000
@@ -47,7 +52,8 @@ providers:
         best_for: "High-volume cheap work"
         source_date: "2026-09"
 
-      - model: GPT Image 2
+      - id: gpt-image-2
+        model: GPT Image 2
         released: "2026"
         status: ga
         context_tokens: null
@@ -61,7 +67,8 @@ providers:
         best_for: "Highest text-accuracy image generation (AA Image Arena #1)"
         source_date: "2026-09"
 
-      - model: Whisper v4
+      - id: whisper-v4
+        model: Whisper v4
         released: "2026"
         status: ga
         context_tokens: null
@@ -75,7 +82,8 @@ providers:
         best_for: "Speech-to-text transcription standard"
         source_date: "2026-09"
 
-      - model: Sora 2
+      - id: sora-2
+        model: Sora 2
         released: "2026"
         status: sunset
         context_tokens: null
@@ -92,7 +100,8 @@ providers:
 
   - name: Anthropic
     models:
-      - model: Claude Fable 5.1
+      - id: claude-fable-5-1
+        model: Claude Fable 5.1
         released: "2026-09"
         status: ga
         context_tokens: 1000000
@@ -105,7 +114,8 @@ providers:
         best_for: "Long-horizon autonomous work; cheapest cache reads ($0.25/1M)"
         source_date: "2026-09"
 
-      - model: Claude Opus 5.5
+      - id: claude-opus-5-5
+        model: Claude Opus 5.5
         released: "2026-09"
         status: ga
         context_tokens: 1000000
@@ -118,7 +128,8 @@ providers:
         best_for: "Claude Code default; complex coding"
         source_date: "2026-09"
 
-      - model: Claude Sonnet 5
+      - id: claude-sonnet-5
+        model: Claude Sonnet 5
         released: "2026-06"
         status: ga
         context_tokens: 1000000
@@ -133,7 +144,8 @@ providers:
 
   - name: Google
     models:
-      - model: Gemini 3.1 Pro
+      - id: gemini-3-1-pro
+        model: Gemini 3.1 Pro
         released: "2026-02"
         status: preview
         context_tokens: 200000
@@ -147,7 +159,8 @@ providers:
         notes: "Tiered pricing above 200K"
         source_date: "2026-09"
 
-      - model: Gemini 3.8 Flash
+      - id: gemini-3-8-flash
+        model: Gemini 3.8 Flash
         released: "2026-09"
         status: ga
         context_tokens: 1000000
@@ -161,7 +174,8 @@ providers:
         notes: "Promo price through end of 2026"
         source_date: "2026-09"
 
-      - model: Gemini 3.8 Live (Extended Thinking)
+      - id: gemini-3-8-live
+        model: Gemini 3.8 Live (Extended Thinking)
         released: "2026-09"
         status: ga
         context_tokens: null
@@ -175,7 +189,8 @@ providers:
         best_for: "Native speech-to-speech; S2S quality index #1"
         source_date: "2026-09"
 
-      - model: Imagen (Nano Banana Pro)
+      - id: imagen-nano-banana-pro
+        model: Imagen (Nano Banana Pro)
         released: "2026"
         status: ga
         context_tokens: null
@@ -187,9 +202,11 @@ providers:
         tags: []
         open_weights: false
         best_for: "4K images and image editing"
+        notes: "Platform model string varies (image generation endpoint) — verify"
         source_date: "2026-09"
 
-      - model: Veo 3.1
+      - id: veo-3-1
+        model: Veo 3.1
         released: "2026"
         status: ga
         context_tokens: null
@@ -205,7 +222,8 @@ providers:
 
   - name: xAI
     models:
-      - model: Grok 4.7
+      - id: grok-4-7
+        model: Grok 4.7
         released: "2026-09"
         status: ga
         context_tokens: 500000
@@ -219,7 +237,8 @@ providers:
         notes: "Cache hits $0.50/1M"
         source_date: "2026-09"
 
-      - model: Grok Imagine
+      - id: grok-imagine
+        model: Grok Imagine
         released: "2026-05"
         status: ga
         context_tokens: null
@@ -235,7 +254,8 @@ providers:
 
   - name: Moonshot AI
     models:
-      - model: Kimi K3
+      - id: kimi-k3
+        model: Kimi K3
         released: "2026-07"
         status: ga
         context_tokens: 1000000
@@ -250,7 +270,8 @@ providers:
         notes: "2.8T MoE / ~104B active; prices approximate"
         source_date: "2026-09"
 
-      - model: Kimi K2.8 Preview
+      - id: kimi-k2-8-preview
+        model: Kimi K2.8 Preview
         released: "2026-09"
         status: preview
         context_tokens: 1000000

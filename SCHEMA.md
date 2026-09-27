@@ -6,6 +6,7 @@ The patterns this matrix follows. Stay faithful to these definitions when adding
 
 | Field | Type | Rule |
 |---|---|---|
+| `id` | string | Normalized kebab-case key (`claude-opus-5-5`, `kimi-k3`). **The join key across all files in this repo and the handle agents use.** Platform strings may differ — verify per platform |
 | `provider` | string | Company name |
 | `model` | string | Exact market name |
 | `released` | string | `YYYY-MM` or `preview` |
@@ -51,7 +52,7 @@ Benchmarks are a **classification dimension of the main board**, not a separate 
 | `benchmark` | string | Board name, e.g. `SWE-bench Verified` |
 | `version` | string | Board revision — required, scores across versions are not comparable |
 | `category` | enum | `coding` · `reasoning` · `science` · `agentic` · `composite` · `image` · `video` |
-| `model` | string | Must match a `model` name in models.yaml, or be added there |
+| `model` | string | The `id` key from models.yaml. Reference models not in the pricing matrix keep their kebab-case id here only |
 | `score` | float | In `unit` |
 | `unit` | string | `%` or `index` |
 | `source` | enum | `independent` (third-party run) · `vendor` (self-reported, own scaffold) — **never omit** |
