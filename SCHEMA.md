@@ -39,5 +39,5 @@ The patterns this matrix follows. Stay faithful to these definitions when adding
 1. **If a price is unknown, write `null` — never guess.** A wrong price is worse than a missing one.
 2. **Only list modalities that actually ship.** "Coming soon" does not enter the list.
 3. **`status: sunset` models don't stay in the table** — only note them where a migration plan is needed.
-4. If providers exceed 5, split into `providers/`; a single file holds up to 5 providers.
+4. The README is a **single table** sorted by provider (provider in the leading column), flagship first within each provider. Don't split into per-provider tables.
 5. Update `source_date` with every change.
