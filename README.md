@@ -1,6 +1,6 @@
 # AI Model Comparison Matrix
 
-Current models from 5 major providers: pricing, context windows, input/output modalities, and capability classification.
+Current models from 5 major providers: pricing, context windows, input/output modalities, capability tags, and benchmark standing.
 
 > **Last updated: September 2026.** Prices in USD per 1M tokens (input / output). Sources: provider pricing pages + Artificial Analysis, verified September 2026.
 
@@ -14,6 +14,7 @@ Full definitions and contribution rules in [SCHEMA.md](SCHEMA.md). In short:
 
 ## Legend
 ✅ = built-in, generally available · 🔶 = partial / preview / higher tier only · — = not supported · ⚠️ = sunset, don't build on it
+Benchmark cells: **bold** = independent third-party run · *italic* = vendor self-reported (inflates vs independent)
 
 ---
 
@@ -49,6 +50,40 @@ Full definitions and contribution rules in [SCHEMA.md](SCHEMA.md). In short:
 
 ---
 
+## Benchmark matrix (classification step)
+
+Where each model stands on the boards that matter. This is a **classification dimension for the table above**, not a separate leaderboard — use it to confirm a tag, not to rank across different benchmarks.
+
+| Model | SWE-bench Verified (coding) | SWE-bench Pro (hard coding) | Terminal-Bench (agentic) | GPQA Diamond (science) | AA Intelligence Index |
+|---|---|---|---|---|---|
+| Claude Opus 5.5 | — | — | — | — | — |
+| Claude Opus 5 | ***96.5*** | *79.2* | — | — | — |
+| Claude Fable 5.1 | — | — | — | — | **65.7** |
+| Claude Fable 5 | **95.0** | *80.0* | — | — | — |
+| Claude Sonnet 5 | — | *63.2* | — | — | — |
+| GPT-6 Astra | — | — | — | *91.0* | **61.2** |
+| GPT-5.6 Sol | **96.2** | *64.6* | — | — | — |
+| GPT-5.6 Luna | **93.0** | *62.7* | — | — | — |
+| GPT-5.5 | *88.7* | — | *82.7* (TB 2.0) | — | — |
+| Kimi K3 | **93.4** | — | *88.3* | **93.1** | — |
+| Kimi K2.6 | *80.2* | — | — | — | — |
+| Kimi K2.8 Preview | — | — | — | — | — |
+| Grok 4.7 | — | — | — | — | **46.3** |
+| Grok 4.5 | **86.6** | *64.7* | — | — | — |
+| Gemini 3.1 Pro | *80.6* | — | — | — | — |
+| Gemini 3.8 Flash | — | — | — | — | **41.0** |
+| DeepSeek-V4-Pro-Max | *80.6* | — | — | — | — |
+| GLM-5.2 | **80.0** | *62.1* | — | — | — |
+| MiniMax M2.5 | *80.2* | — | — | — | — |
+
+**Reading rules**
+- Cells are **not comparable across columns** — a 93 in Verified says nothing about GPQA.
+- Prefer **bold (independent)** rows over *italic (vendor)* when both exist; vendor scaffolds inflate (vendor SWE-Pro board tops at 80%, standardized SEAL harness at 61.5%).
+- Empty = not evaluated / no public number. Don't infer weakness.
+- Full score data with dates and harnesses: [`benchmarks.yaml`](benchmarks.yaml)
+
+---
+
 ## Quick comparison (by job)
 
 | You need… | Best pick |
@@ -67,5 +102,6 @@ Full definitions and contribution rules in [SCHEMA.md](SCHEMA.md). In short:
 
 ## Files
 
-- [`models.yaml`](models.yaml) — machine-readable version of this data (for agents and scripts)
-- [`SCHEMA.md`](SCHEMA.md) — column definitions and rules for adding new models
+- [`models.yaml`](models.yaml) — pricing/modality matrix, machine-readable (for agents and scripts)
+- [`benchmarks.yaml`](benchmarks.yaml) — benchmark scores with source/harness/date per row
+- [`SCHEMA.md`](SCHEMA.md) — field definitions and rules for adding new models and scores
