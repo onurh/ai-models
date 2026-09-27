@@ -77,11 +77,11 @@ Provider notes:
 
 | ID | Provider | Model | Released | Billing | Input | Output | Notes |
 |---|---|---|---|---|---|---|---|
-| `whisper-v4` | OpenAI | Whisper v4 | 2026 | per minute | audio | text | De facto transcription standard |
-| `openai-tts` | OpenAI | OpenAI TTS | 2025 | per 1K chars | text | audio | Low-latency speech synthesis (`gpt-4o-mini-tts`, `tts-1-hd`) |
+| `whisper-v4` | OpenAI | Whisper v4 | 2026 | $0.006 per minute | audio | text | Transcription standard; gpt-transcribe line starts at $0.0045/min |
+| `openai-tts` | OpenAI | OpenAI TTS | 2025 | $15–30 per 1M chars | text | audio | `tts-1` $15 · `tts-1-hd` $30 per 1M chars; `gpt-4o-mini-tts` ~$0.015/min token-based |
 | `gemini-3-8-live` | Google | Gemini 3.8 Live (Extended Thinking) | 2026-09 | $0.005/min in · $0.018/min out | audio | audio | Native speech-to-speech; #1 on the AA S2S quality index (82.6) |
-| `google-chirp3-hd` | Google | Cloud TTS (Chirp 3 HD) | 2025 | per 1M chars | text | audio | Google Cloud voice library, 60+ languages |
-| `elevenlabs-v3` | ElevenLabs | ElevenLabs v3 | 2026 | per 1K chars | text | audio | Expressive TTS, voice cloning, dubbing; strong multilingual incl. Turkish |
+| `google-chirp3-hd` | Google | Cloud TTS (Chirp 3 HD) | 2025 | $30 per 1M chars | text | audio | Google Cloud voice library, 60+ languages |
+| `elevenlabs-v3` | ElevenLabs | ElevenLabs v3 | 2026 | $0.10 per 1K chars | text | audio | Expressive TTS, voice cloning, dubbing; Flash tier $0.05/1K; strong multilingual incl. Turkish |
 
 ---
 

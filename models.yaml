@@ -156,6 +156,7 @@ providers:
     open_weights: false
     best_for: Speech-to-text transcription standard
     source_date: 2026-09
+    notes: $0.006/min; newer gpt-transcribe line from $0.0045/min
   - id: sora-2
     model: Sora 2
     released: '2026'
@@ -192,6 +193,7 @@ providers:
     open_weights: false
     best_for: Low-latency speech synthesis (gpt-4o-mini-tts, tts-1-hd)
     source_date: 2026-09
+    notes: tts-1 $15/1M chars, tts-1-hd $30/1M chars; gpt-4o-mini-tts $0.60 in / $12 out per 1M tokens (~$0.015/min)
 - name: Anthropic
   models:
   - id: claude-fable-5-1
@@ -434,6 +436,7 @@ providers:
     open_weights: false
     best_for: Google Cloud voice library, 60+ languages
     source_date: 2026-09
+    notes: $30/1M characters; 1M free chars/month
 - name: xAI
   models:
   - id: grok-4-7
@@ -587,3 +590,4 @@ providers:
     open_weights: false
     best_for: Expressive TTS, voice cloning, dubbing
     source_date: 2026-09
+    notes: $0.10/1K chars ($100/1M); Flash/Turbo $0.05/1K
