@@ -35,6 +35,7 @@ The patterns this matrix follows. Stay faithful to these definitions when adding
 | `cheap-volume` | Earns its place mostly on high-volume cheap work |
 | `long-context` | 500K+ token context |
 | `multilingual` | Holds register and idiom across languages (not just English) |
+| `instruction-following` | Reliably satisfies explicit multi-constraint instructions |
 
 **Tags are earned, not copied.** A model carries a tag when it passes the matching tasks in `evals/` (see §Score schema). Marketing claims alone don't grant tags.
 
