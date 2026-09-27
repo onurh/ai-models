@@ -62,6 +62,66 @@ providers:
     open_weights: false
     best_for: High-volume cheap work
     source_date: 2026-09
+  - id: gpt-5-6-sol
+    model: GPT-5.6 Sol
+    released: 2026-07
+    status: ga
+    context_tokens: 1050000
+    price_input: 4.0
+    price_output: 20.0
+    billing_unit: per_1m_tokens
+    input:
+    - text
+    - image
+    - file
+    output:
+    - text
+    tags:
+    - agent
+    - coding
+    open_weights: false
+    best_for: Previous-generation flagship coder, still selectable
+    source_date: 2026-09
+    notes: Promo pricing; superseded at the top by GPT-6 Sol
+  - id: gpt-5-6-terra
+    model: GPT-5.6 Terra
+    released: 2026-07
+    status: ga
+    context_tokens: 1050000
+    price_input: 2.0
+    price_output: 12.0
+    billing_unit: per_1m_tokens
+    input:
+    - text
+    - image
+    - file
+    output:
+    - text
+    tags:
+    - agent
+    open_weights: false
+    best_for: Mid tier of the GPT-5.6 family
+    source_date: 2026-09
+  - id: gpt-5-6-luna
+    model: GPT-5.6 Luna
+    released: 2026-07
+    status: ga
+    context_tokens: 1050000
+    price_input: 0.2
+    price_output: 1.2
+    billing_unit: per_1m_tokens
+    input:
+    - text
+    - image
+    - file
+    output:
+    - text
+    tags:
+    - agent
+    - cheap-volume
+    open_weights: false
+    best_for: Budget tier of the GPT-5.6 family
+    source_date: 2026-09
   - id: gpt-image-2
     model: GPT Image 2
     released: '2026'
@@ -194,6 +254,46 @@ providers:
     open_weights: false
     best_for: 'Daily driver: code, agents, writing'
     source_date: 2026-09
+  - id: claude-haiku-4-5
+    model: Claude Haiku 4.5
+    released: 2025-10
+    status: ga
+    context_tokens: 200000
+    price_input: 1.0
+    price_output: 5.0
+    billing_unit: per_1m_tokens
+    input:
+    - text
+    - image
+    output:
+    - text
+    tags:
+    - cheap-volume
+    open_weights: false
+    best_for: Fast small tier for high-volume simple work
+    source_date: 2026-09
+  - id: claude-opus-5
+    model: Claude Opus 5
+    released: 2026-07
+    status: ga
+    context_tokens: 1000000
+    price_input: 5.0
+    price_output: 25.0
+    billing_unit: per_1m_tokens
+    input:
+    - text
+    - image
+    - file
+    output:
+    - text
+    tags:
+    - agent
+    - computer-use
+    - coding
+    open_weights: false
+    best_for: Superseded by Claude Opus 5.5
+    source_date: 2026-09
+    notes: Struck through on the board per supersede rule
 - name: Google
   models:
   - id: gemini-3-1-pro
@@ -240,6 +340,27 @@ providers:
     open_weights: false
     best_for: Fast multimodal volume work, 1M context
     notes: Promo price through end of 2026
+    source_date: 2026-09
+  - id: gemini-3-5-flash-lite
+    model: Gemini 3.5 Flash-Lite
+    released: '2026'
+    status: ga
+    context_tokens: 1000000
+    price_input: 0.3
+    price_output: 2.5
+    billing_unit: per_1m_tokens
+    input:
+    - text
+    - image
+    - audio
+    - video
+    - file
+    output:
+    - text
+    tags:
+    - cheap-volume
+    open_weights: false
+    best_for: Lowest-cost Gemini tier
     source_date: 2026-09
   - id: gemini-3-8-live
     model: Gemini 3.8 Live (Extended Thinking)
