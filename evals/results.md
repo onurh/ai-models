@@ -1,7 +1,7 @@
 # Observation log
 
-Her satır: model × prompt × gözlem. Tarih koy, net yaz.
+One row per run: model, prompt, observation. Always include the date; keep observations concrete.
 
 | Date | Model | Prompt | Observation |
 |---|---|---|---|
-| 2026-09-27 | *(example)* kimi-k3 | tr-register | *(örnek: üslup kaydı başarılı, ama â/ a açıklamasında eski kuralı verdi)* |
+| YYYY-MM-DD | model-id | prompt-id | what worked, what broke |

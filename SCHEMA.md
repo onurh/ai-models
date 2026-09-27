@@ -27,11 +27,11 @@ The patterns this matrix follows. Stay faithful to these definitions when adding
 
 | Tag | Meaning |
 |---|---|
-| `reasoning` 🧠 | Always-on / structured deep reasoning |
-| `agent` 🤖 | Proven for tool-use + multi-step agent work |
-| `computer-use` 💻 | Screen/terminal control (GUI agent) |
-| `coding` ⌨️ | Strong at code generation and repo-scale work |
-| `voice` 🎙️ | Native speech-to-speech |
+| `reasoning` | Always-on / structured deep reasoning |
+| `agent` | Proven for tool-use + multi-step agent work |
+| `computer-use` | Screen/terminal control (GUI agent) |
+| `coding` | Strong at code generation and repo-scale work |
+| `voice` | Native speech-to-speech |
 | `cheap-volume` | Earns its place mostly on high-volume cheap work |
 | `long-context` | 500K+ token context |
 | `multilingual` | Holds register and idiom across languages (not just English) |
