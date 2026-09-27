@@ -62,9 +62,9 @@ Provider notes:
 
 | ID | Provider | Model | Released | Billing | Input | Notes |
 |---|---|---|---|---|---|---|
-| `gpt-image-2` | OpenAI | GPT Image 2 | 2026 | per image | text, image | Top of the AA Image Arena (Elo ~1339); strongest prompt and text accuracy |
-| `imagen-nano-banana-pro` | Google | Imagen (Nano Banana Pro) | 2026 | per image | text, image | Native 4K output, editing, factual text via Gemini grounding |
-| `grok-imagine` | xAI | Grok Imagine | 2026-05 | per image | text, image | Image generation and image-to-video |
+| `gpt-image-2` | OpenAI | GPT Image 2 | 2026-06 | $0.006–0.211 per image | text, image | Tiered by quality (low/medium/high) and aspect; batch 50% off; #1 on the AA Image Arena (Elo ~1339) |
+| `imagen-nano-banana-pro` | Google | Imagen (Nano Banana Pro) | 2026 | $0.134 (1K/2K) · $0.24 (4K) | text, image | Native 4K, editing, factual text via Gemini grounding; batch 50% off |
+| `grok-imagine` | xAI | Grok Imagine | 2026-05 | per image | text, image | Image generation and image-to-video; price not verified |
 
 ## Video-output models
 

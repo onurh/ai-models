@@ -124,7 +124,7 @@ providers:
     source_date: 2026-09
   - id: gpt-image-2
     model: GPT Image 2
-    released: '2026'
+    released: 2026-06
     status: ga
     context_tokens: null
     price_input: null
@@ -139,6 +139,7 @@ providers:
     open_weights: false
     best_for: 'Highest text-accuracy image generation (AA Image Arena #1)'
     source_date: 2026-09
+    notes: 'Per image by quality/resolution: low $0.005-0.006, medium $0.041-0.053, high $0.165-0.211; batch 50% off'
   - id: whisper-v4
     model: Whisper v4
     released: '2026'
@@ -395,7 +396,7 @@ providers:
     tags: []
     open_weights: false
     best_for: 4K images and image editing
-    notes: "Platform model string varies (image generation endpoint) \u2014 verify"
+    notes: $0.134 per 1K/2K image, $0.24 per 4K; batch 50% off; input $2.00/1M tokens; platform model string varies - verify
     source_date: 2026-09
   - id: veo-3-1
     model: Veo 3.1
