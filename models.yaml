@@ -416,6 +416,7 @@ providers:
     open_weights: false
     best_for: Enterprise video (GCP, SLA, SynthID)
     source_date: 2026-09
+    notes: 'Per second by tier: Lite $0.05, Fast $0.10-0.15, Quality $0.40; 4K $0.60; audio may add; 8s clips'
   - id: google-chirp3-hd
     model: Cloud TTS (Chirp 3 HD)
     released: '2025'

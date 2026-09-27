@@ -70,7 +70,7 @@ Provider notes:
 
 | ID | Provider | Model | Released | Billing | Input | Notes |
 |---|---|---|---|---|---|---|
-| `veo-3-1` | Google | Veo 3.1 | 2026 | per second | text, image | Enterprise option (GCP, SLA, SynthID); native audio |
+| `veo-3-1` | Google | Veo 3.1 | 2026 | $0.05–0.40 per second | text, image | Lite $0.05 · Fast $0.10–0.15 · Quality $0.40 (4K $0.60); audio may add; 8s clips; enterprise option (GCP, SLA, SynthID) |
 | ~~`sora-2`~~ | OpenAI | ~~Sora 2~~ | 2026 | per second | text, image | Shut down September 24, 2026 — row kept for reference |
 
 ## Audio models
