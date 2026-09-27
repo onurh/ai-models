@@ -1,6 +1,6 @@
-# AI model karşılaştırma verisi — Eylül 2026
-# Şema: SCHEMA.md. Fiyatlar USD/1M token (billing_unit'a bak).
-# Bu dosya agent'lar ve betikler için; insanlar README.md'deki tabloya baksın.
+# AI model comparison data — September 2026
+# Schema: SCHEMA.md. Prices in USD/1M tokens (see billing_unit).
+# This file is for agents and scripts; humans should read the README.md tables.
 
 providers:
 
@@ -17,8 +17,8 @@ providers:
         output: [text]
         tags: [reasoning, agent, computer-use, coding]
         open_weights: false
-        best_for: "En zor akıl yürütme, agentic kodlama, computer use"
-        notes: "Cache okuma ~$1/1M"
+        best_for: "Hardest reasoning, agentic coding, computer use"
+        notes: "Cache reads ~$1/1M"
         source_date: "2026-09"
 
       - model: GPT-6 Sol
@@ -31,7 +31,7 @@ providers:
         output: [text]
         tags: [agent, coding]
         open_weights: false
-        best_for: "Kodlama ve agent işleri, Astra'nın yarı fiyatına"
+        best_for: "Coding and agent work at half of Astra's price"
         source_date: "2026-09"
 
       - model: GPT-6 Luna
@@ -44,7 +44,7 @@ providers:
         output: [text]
         tags: [agent, cheap-volume]
         open_weights: false
-        best_for: "Yüksek hacimli ucuz işler"
+        best_for: "High-volume cheap work"
         source_date: "2026-09"
 
       - model: GPT Image 2
@@ -58,7 +58,7 @@ providers:
         output: [image]
         tags: []
         open_weights: false
-        best_for: "Metin-doğruluğu en yüksek görsel üretim (AA Image Arena #1)"
+        best_for: "Highest text-accuracy image generation (AA Image Arena #1)"
         source_date: "2026-09"
 
       - model: Whisper v4
@@ -72,7 +72,7 @@ providers:
         output: [text]
         tags: []
         open_weights: false
-        best_for: "Konuşma-transkripsiyon standardı"
+        best_for: "Speech-to-text transcription standard"
         source_date: "2026-09"
 
       - model: Sora 2
@@ -87,7 +87,7 @@ providers:
         tags: []
         open_weights: false
         best_for: "—"
-        notes: "API kapanışı 2026-09-24; üzerine yeni iş kurma"
+        notes: "API shuts down 2026-09-24; don't build new work on it"
         source_date: "2026-09"
 
   - name: Anthropic
@@ -102,7 +102,7 @@ providers:
         output: [text]
         tags: [reasoning, agent, computer-use, coding, long-context]
         open_weights: false
-        best_for: "Uzun süreli otonom iş; en ucuz cache okuma ($0.25/1M)"
+        best_for: "Long-horizon autonomous work; cheapest cache reads ($0.25/1M)"
         source_date: "2026-09"
 
       - model: Claude Opus 5.5
@@ -115,7 +115,7 @@ providers:
         output: [text]
         tags: [agent, computer-use, coding]
         open_weights: false
-        best_for: "Claude Code varsayılanı; karmaşık kodlama"
+        best_for: "Claude Code default; complex coding"
         source_date: "2026-09"
 
       - model: Claude Sonnet 5
@@ -128,7 +128,7 @@ providers:
         output: [text]
         tags: [agent, coding]
         open_weights: false
-        best_for: "Günlük sürücü: kod, agent, yazı"
+        best_for: "Daily driver: code, agents, writing"
         source_date: "2026-09"
 
   - name: Google
@@ -143,8 +143,8 @@ providers:
         output: [text]
         tags: [reasoning, agent]
         open_weights: false
-        best_for: "Araştırma; Search grounding ile doğruluk"
-        notes: "200K üstü kademeli fiyatlandırma"
+        best_for: "Research; accuracy with Search grounding"
+        notes: "Tiered pricing above 200K"
         source_date: "2026-09"
 
       - model: Gemini 3.8 Flash
@@ -157,8 +157,8 @@ providers:
         output: [text]
         tags: [agent, cheap-volume, long-context]
         open_weights: false
-        best_for: "Hızlı çok modlu hacim işleri, 1M bağlam"
-        notes: "Promo fiyat 2026 sonuna kadar"
+        best_for: "Fast multimodal volume work, 1M context"
+        notes: "Promo price through end of 2026"
         source_date: "2026-09"
 
       - model: Gemini 3.8 Live (Extended Thinking)
@@ -172,7 +172,7 @@ providers:
         output: [audio]
         tags: [voice]
         open_weights: false
-        best_for: "Native speech-to-speech; S2S kalite endeksi #1"
+        best_for: "Native speech-to-speech; S2S quality index #1"
         source_date: "2026-09"
 
       - model: Imagen (Nano Banana Pro)
@@ -186,7 +186,7 @@ providers:
         output: [image]
         tags: []
         open_weights: false
-        best_for: "4K görsel ve görsel edit"
+        best_for: "4K images and image editing"
         source_date: "2026-09"
 
       - model: Veo 3.1
@@ -200,7 +200,7 @@ providers:
         output: [video, audio]
         tags: []
         open_weights: false
-        best_for: "Kurumsal video (GCP, SLA, SynthID)"
+        best_for: "Enterprise video (GCP, SLA, SynthID)"
         source_date: "2026-09"
 
   - name: xAI
@@ -215,8 +215,8 @@ providers:
         output: [text]
         tags: [agent, coding]
         open_weights: false
-        best_for: "Fiyat/performans kodlama; canlı X verisi"
-        notes: "Cache isabet $0.50/1M"
+        best_for: "Price/performance coding; live X data access"
+        notes: "Cache hits $0.50/1M"
         source_date: "2026-09"
 
       - model: Grok Imagine
@@ -230,7 +230,7 @@ providers:
         output: [image, video]
         tags: []
         open_weights: false
-        best_for: "Görsel üretim + görsel→video"
+        best_for: "Image generation + image-to-video"
         source_date: "2026-09"
 
   - name: Moonshot AI
@@ -246,8 +246,8 @@ providers:
         tags: [reasoning, agent, coding, long-context]
         open_weights: true
         license: Kimi K3 License
-        best_for: "En güçlü açık ağırlıklı model; self-host seçeneği"
-        notes: "2.8T MoE / ~104B aktif; fiyatlar yaklaşık"
+        best_for: "Strongest open-weight model; self-host option"
+        notes: "2.8T MoE / ~104B active; prices approximate"
         source_date: "2026-09"
 
       - model: Kimi K2.8 Preview
@@ -260,6 +260,6 @@ providers:
         output: [text]
         tags: [agent, coding, cheap-volume]
         open_weights: false
-        best_for: "K3'e yakın kodlama, çok daha ucuz"
-        notes: "Kimi Code'da otomatik geçiş; fiyatlar yaklaşık"
+        best_for: "Near-K3 coding at a much lower price"
+        notes: "Auto-rolled out in Kimi Code; prices approximate"
         source_date: "2026-09"

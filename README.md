@@ -1,92 +1,92 @@
-# AI Model Karşılaştırma Matrisi
+# AI Model Comparison Matrix
 
-5 büyük provider'ın güncel modelleri: fiyat, bağlam penceresi, girdi/çıktı modaliteleri ve kabiliyet sınıflandırması.
+Current models from 5 major providers: pricing, context windows, input/output modalities, and capability classification.
 
-> **Güncelleme: Eylül 2026.** Fiyatlar 1M token başına USD (girdi / çıktı). Kaynak: sağlayıcı fiyat sayfaları + Artificial Analysis, Eylül 2026 doğrulaması.
+> **Last updated: September 2026.** Prices in USD per 1M tokens (input / output). Sources: provider pricing pages + Artificial Analysis, verified September 2026.
 
-## Sütunların anlamı (sınıflandırma kalıbı)
+## Column semantics (classification schema)
 
-Tam tanımlar ve ekleme kuralları için [SCHEMA.md](SCHEMA.md)'ye bak. Kısaca:
+Full definitions and contribution rules in [SCHEMA.md](SCHEMA.md). In short:
 
-- **Girdi**: metin · görsel · ses · video · dosya
-- **Çıktı**: metin · ses (TTS) · görsel · video
-- **Etiketler**: 🧠 reasoning · 🤖 agent/tool-use · 💻 computer use · ⌨️ kod · 🔓 açık ağırlık (self-host)
+- **Input**: text · image · audio · video · file
+- **Output**: text · audio (TTS) · image · video
+- **Tags**: 🧠 reasoning · 🤖 agent/tool-use · 💻 computer use · ⌨️ coding · 🔓 open weights (self-hostable)
 
-### Lejant
-✅ = yerleşik ve genel erişim · 🔶 = kısmi / önizleme / üst planda · — = yok
+### Legend
+✅ = built-in, generally available · 🔶 = partial / preview / higher tier only · — = not supported
 
 ---
 
 ## OpenAI
 
-| Model | Bağlam | $ girdi | $ çıktı | Girdi | Çıktı | Etiketler |
+| Model | Context | $ input | $ output | Input | Output | Tags |
 |---|---|---|---|---|---|---|
-| **GPT-6 Astra** | 1.05M | 10.00 | 50.00 | metin, görsel, dosya | metin | 🧠🤖💻⌨️ |
-| **GPT-6 Sol** | 1.05M | 2.00 | 10.00 | metin, görsel, dosya | metin | 🤖⌨️ |
-| **GPT-6 Luna** | 1.05M | 0.10 | 0.50 | metin, görsel, dosya | metin | 🤖 (yüksek hacim, ucuz) |
-| **GPT Image 2** | — | görüntü başına | görüntü başına | metin, görsel | görsel | En yüksek arena skoru (Elo ~1339) |
-| **Whisper v4** | — | dk başına | — | ses | metin | Transkripsiyon standardı |
-| **Sora 2** ⚠️ | — | sn başına | — | metin, görsel | video | ⚠️ API kapanışı: 24 Eylül 2026 |
+| **GPT-6 Astra** | 1.05M | 10.00 | 50.00 | text, image, file | text | 🧠🤖💻⌨️ |
+| **GPT-6 Sol** | 1.05M | 2.00 | 10.00 | text, image, file | text | 🤖⌨️ |
+| **GPT-6 Luna** | 1.05M | 0.10 | 0.50 | text, image, file | text | 🤖 (cheap, high-volume) |
+| **GPT Image 2** | — | per image | per image | text, image | image | Top arena score (Elo ~1339) |
+| **Whisper v4** | — | per minute | — | audio | text | Transcription standard |
+| **Sora 2** ⚠️ | — | per second | — | text, image | video | ⚠️ API shutdown: Sep 24, 2026 |
 
-*ChatGPT sesli konuşma (voice mode) metin modeli + ayrı ses katmanıyla çalışır; TTS API'si mevcuttur.*
+*ChatGPT voice mode runs a text model + separate audio layer; a TTS API is available.*
 
 ## Anthropic
 
-| Model | Bağlam | $ girdi | $ çıktı | Girdi | Çıktı | Etiketler |
+| Model | Context | $ input | $ output | Input | Output | Tags |
 |---|---|---|---|---|---|---|
-| **Claude Fable 5.1** | 1M | 10.00 | 50.00 | metin, görsel, dosya | metin | 🧠🤖💻⌨️ |
-| **Claude Opus 5.5** | 1M | 4.00 | 20.00 | metin, görsel, dosya | metin | 🤖💻⌨️ |
-| **Claude Sonnet 5** | 1M | 2.00 | 10.00 | metin, görsel, dosya | metin | 🤖💻⌨️ |
+| **Claude Fable 5.1** | 1M | 10.00 | 50.00 | text, image, file | text | 🧠🤖💻⌨️ |
+| **Claude Opus 5.5** | 1M | 4.00 | 20.00 | text, image, file | text | 🤖💻⌨️ |
+| **Claude Sonnet 5** | 1M | 2.00 | 10.00 | text, image, file | text | 🤖💻⌨️ |
 
-*Görsel üretimi ve TTS yok. Cache okuma $0.25/1M (Fable) — uzun agent oturumlarında en ucuzu.*
+*No image generation, no TTS. Cache reads at $0.25/1M (Fable) — cheapest for long agent sessions.*
 
 ## Google
 
-| Model | Bağlam | $ girdi | $ çıktı | Girdi | Çıktı | Etiketler |
+| Model | Context | $ input | $ output | Input | Output | Tags |
 |---|---|---|---|---|---|---|
-| **Gemini 3.1 Pro** | 200K+ (kademeli) | 2.00 | 12.00 | metin, görsel, ses, video, dosya | metin | 🧠🤖 |
-| **Gemini 3.8 Flash** | 1M | 0.75 | 3.75 | metin, görsel, ses, video, dosya | metin | 🤖 (hacim işleri) |
-| **Gemini 3.8 Live / ET** | oturum | 0.005/dk | 0.018/dk | ses | ses | 🎙️ S2S kalite endeksi #1 (82.6) |
-| **Imagen (Nano Banana Pro)** | — | görüntü başına | — | metin, görsel | görsel | 4K çıktı, edit |
-| **Veo 3.1** | — | sn başına | — | metin, görsel | video + ses | Kurumsal/SLA seçeneği |
+| **Gemini 3.1 Pro** | 200K+ (tiered) | 2.00 | 12.00 | text, image, audio, video, file | text | 🧠🤖 |
+| **Gemini 3.8 Flash** | 1M | 0.75 | 3.75 | text, image, audio, video, file | text | 🤖 (volume work) |
+| **Gemini 3.8 Live / ET** | session | $0.005/min | $0.018/min | audio | audio | 🎙️ S2S quality index #1 (82.6) |
+| **Imagen (Nano Banana Pro)** | — | per image | — | text, image | image | 4K output, editing |
+| **Veo 3.1** | — | per second | — | text, image | video + audio | Enterprise/SLA option |
 
 ## xAI
 
-| Model | Bağlam | $ girdi | $ çıktı | Girdi | Çıktı | Etiketler |
+| Model | Context | $ input | $ output | Input | Output | Tags |
 |---|---|---|---|---|---|---|
-| **Grok 4.7** | 500K | 2.00 | 6.00 | metin, görsel, dosya | metin | 🤖⌨️ (fiyat/performans) |
-| **Grok Imagine** | — | görüntü/sn başına | — | metin, görsel | görsel, video | Görsel→video |
+| **Grok 4.7** | 500K | 2.00 | 6.00 | text, image, file | text | 🤖⌨️ (price/performance) |
+| **Grok Imagine** | — | per image/sec | — | text, image | image, video | Image→video |
 
-*Canlı X verisi erişimi. En açık içerik politikası frontier sınıfında.*
+*Live X data access. Most permissive content policy in the frontier tier.*
 
 ## Moonshot AI (Kimi)
 
-| Model | Bağlam | $ girdi | $ çıktı | Girdi | Çıktı | Etiketler |
+| Model | Context | $ input | $ output | Input | Output | Tags |
 |---|---|---|---|---|---|---|
-| **Kimi K3** | 1M | 2.20* | 8.00* | metin, görsel, video, dosya | metin | 🧠🤖⌨️🔓 2.8T MoE |
-| **Kimi K2.8 Preview** | 1M | 0.60* | 2.50* | metin, görsel, video | metin | ⌨️🤖 (K3'e yakın, ucuz) |
+| **Kimi K3** | 1M | 2.20* | 8.00* | text, image, video, file | text | 🧠🤖⌨️🔓 2.8T MoE |
+| **Kimi K2.8 Preview** | 1M | 0.60* | 2.50* | text, image, video | text | ⌨️🤖 (near-K3, cheap) |
 
-*\*yaklaşık; cache girdi daha ucuz. K3 açık ağırlıklı (kendi lisansı, self-host mümkün).*
+*\*approximate; cached input cheaper. K3 is open-weight (own license, self-hostable).*
 
 ---
 
-## Hızlı Karşılaştırma (amiral gemileri)
+## Quick comparison (flagships)
 
-| Kabiliyet | En iyi seçenek |
+| Capability | Best pick |
 |---|---|
-| En zor akıl yürütme | GPT-6 Astra ≈ Claude Fable 5.1 |
-| Uzun süreli agent / otonom iş | Claude Fable 5.1 (ucuz cache) |
-| Kodlama (günlük) | Claude Sonnet 5 · Kimi K2.8 Preview |
-| Kodlama (bütçe) | Grok 4.7 · DeepSeek V4.1 Flash |
-| Sesli konuşma (S2S) | Gemini 3.8 Live — rakipsiz |
-| Görsel üretim | GPT Image 2 (kalite) · Imagen (4K) |
-| Video üretim | Kling 3.0 (fiyat) · Veo 3.1 (kurumsal) |
-| Self-host / veri mahremiyeti | Kimi K3 (en güçlü açık model) |
-| Hacimli ucuz iş | Gemini 3.8 Flash · GPT-6 Luna |
+| Hardest reasoning | GPT-6 Astra ≈ Claude Fable 5.1 |
+| Long-horizon autonomous work | Claude Fable 5.1 (cheap cache) |
+| Daily coding | Claude Sonnet 5 · Kimi K2.8 Preview |
+| Coding on a budget | Grok 4.7 · DeepSeek V4.1 Flash |
+| Voice conversation (S2S) | Gemini 3.8 Live — unrivaled |
+| Image generation | GPT Image 2 (quality) · Imagen (4K) |
+| Video generation | Kling 3.0 (price) · Veo 3.1 (enterprise) |
+| Self-host / data privacy | Kimi K3 (strongest open model) |
+| Cheap volume work | Gemini 3.8 Flash · GPT-6 Luna |
 
 ---
 
-## Dosyalar
+## Files
 
-- [`models.yaml`](models.yaml) — aynı verinin makine okunur hali (agent'lar burayı tüketsin)
-- [`SCHEMA.md`](SCHEMA.md) — sütun tanımları ve yeni model ekleme kuralı
+- [`models.yaml`](models.yaml) — machine-readable version of this data (for agents and scripts)
+- [`SCHEMA.md`](SCHEMA.md) — column definitions and rules for adding new models

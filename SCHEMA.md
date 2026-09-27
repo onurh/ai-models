@@ -1,43 +1,43 @@
-# Sınıflandırma Şeması (SCHEMA)
+# Classification Schema (SCHEMA)
 
-Bu matrisin kalıpları. Yeni model eklerken bu dosyadaki tanımlara sadık kal.
+The patterns this matrix follows. Stay faithful to these definitions when adding new models.
 
-## Alan tanımları
+## Field definitions
 
-| Alan | Tip | Kural |
+| Field | Type | Rule |
 |---|---|---|
-| `provider` | string | Şirket adı |
-| `model` | string | Pazardaki tam ad |
-| `released` | string | `YYYY-MM` veya `preview` |
-| `context_tokens` | int \| null | Maksimum bağlam penceresi; yoksa `null` |
-| `price_input` / `price_output` | float \| null | USD / 1M token; üretim modelleri için `null` + `billing_unit` |
-| `billing_unit` | enum | `per_1m_tokens` (varsayılan) · `per_image` · `per_second` · `per_minute` |
+| `provider` | string | Company name |
+| `model` | string | Exact market name |
+| `released` | string | `YYYY-MM` or `preview` |
+| `context_tokens` | int \| null | Max context window; `null` if none |
+| `price_input` / `price_output` | float \| null | USD / 1M tokens; `null` for generation models + set `billing_unit` |
+| `billing_unit` | enum | `per_1m_tokens` (default) · `per_image` · `per_second` · `per_minute` |
 | `input` | list | `text`, `image`, `audio`, `video`, `file` |
 | `output` | list | `text`, `audio`, `image`, `video` |
-| `tags` | list | Aşağıdaki etiket kümesinden |
-| `open_weights` | bool | Ağırlıklar indirilebiliyor mu |
-| `license` | string \| null | SPDX veya özel lisans adı |
-| `status` | enum | `ga` (varsayılan) · `preview` · `sunset` (tarih `notes`'ta) |
-| `best_for` | string | Tek cümlelik; pazarlama dili değil, kullanım dili |
-| `notes` | string \| null | Uyarı, cache fiyatı, kapanış tarihi vb. |
-| `source_date` | string | `YYYY-MM` — fiyatların doğrulandığı ay |
+| `tags` | list | From the tag set below |
+| `open_weights` | bool | Can weights be downloaded |
+| `license` | string \| null | SPDX id or custom license name |
+| `status` | enum | `ga` (default) · `preview` · `sunset` (date in `notes`) |
+| `best_for` | string | One sentence, usage language — not marketing language |
+| `notes` | string \| null | Warnings, cache pricing, shutdown dates, etc. |
+| `source_date` | string | `YYYY-MM` — month the prices were verified |
 
-## Etiket kümesi (yenisini eklemeden önce burada tanımla)
+## Tag set (define new tags here before using them)
 
-| Etiket | Anlamı |
+| Tag | Meaning |
 |---|---|
-| `reasoning` 🧠 | Her zaman açık / yapılandırılmış derin akıl yürütme |
-| `agent` 🤖 | Tool-use + çok adımlı agent işlerinde kanıtlanmış |
-| `computer-use` 💻 | Ekran/terminal kontrolü (GUI agent) |
-| `coding` ⌨️ | Kod üretimi ve repo-ölçekli işlerde güçlü |
+| `reasoning` 🧠 | Always-on / structured deep reasoning |
+| `agent` 🤖 | Proven for tool-use + multi-step agent work |
+| `computer-use` 💻 | Screen/terminal control (GUI agent) |
+| `coding` ⌨️ | Strong at code generation and repo-scale work |
 | `voice` 🎙️ | Native speech-to-speech |
-| `cheap-volume` | Fiyatının büyük kısmını hacim işlerine borçlu |
-| `long-context` | 500K+ token bağlam |
+| `cheap-volume` | Earns its place mostly on high-volume cheap work |
+| `long-context` | 500K+ token context |
 
-## Doldurma kuralları
+## Filling rules
 
-1. **Fiyat bilinmiyorsa `null` yaz, tahmin etme.** Yanlış fiyat, eksik fiyattan kötüdür.
-2. **Modalite gerçekten destekleniyorsa ekle.** "Yakında geliyor" = listeye girmez.
-3. **`status: sunset` modeller tabloda kalmaz** — sadece geçiş planı gerekenlere not düşülür.
-4. Provider sayısı 5'i geçerse, `providers/` altına böl; tek dosya 5 provider'a kadar.
-5. Her değişiklikte `source_date` güncelle.
+1. **If a price is unknown, write `null` — never guess.** A wrong price is worse than a missing one.
+2. **Only list modalities that actually ship.** "Coming soon" does not enter the list.
+3. **`status: sunset` models don't stay in the table** — only note them where a migration plan is needed.
+4. If providers exceed 5, split into `providers/`; a single file holds up to 5 providers.
+5. Update `source_date` with every change.
