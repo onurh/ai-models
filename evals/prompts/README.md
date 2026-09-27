@@ -1,10 +1,10 @@
 # Benchmark prompts
 
-Her dosya bir deneme. Modelin sohbet kutusuna (veya API'sine) yapıştır, çıktıyı `outputs/<model-id>/<prompt-adi>.md` altına koy, gözlemini `results.md`'ye yaz.
+Each file is one trial. Paste it into the model (chat UI or API), save the output under `outputs/<model-id>/<prompt-id>.md`, and log your observation in `results.md`.
 
-- `code-bugfix.md` — kodlama: gizli bug bulma (coding)
-- `code-intervals.md` — kodlama: algoritma yazımı (coding)
-- `reason-batball.md` — akıl yürütme klasikleri (reasoning)
-- `instr-constraints.md` — çok kısıtlı talimat takibi (instruction-following)
-- `tool-sequence.md` — tool-use dizilimi (agent)
-- `tr-register.md` — Türkçe üslup değiştirme (multilingual)
+- `code-bugfix.md` — coding: finding a hidden bug (coding)
+- `code-intervals.md` — coding: writing an algorithm (coding)
+- `reason-batball.md` — classic reasoning traps (reasoning)
+- `instr-constraints.md` — multi-constraint instruction following (instruction-following)
+- `tool-sequence.md` — tool-call ordering (agent)
+- `tr-register.md` — Turkish register rewriting (multilingual)
