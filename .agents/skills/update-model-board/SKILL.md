@@ -9,12 +9,14 @@ Single job: add or modify rows in the ai-models board without breaking its struc
 
 ## Board verticals (do not change without updating SCHEMA)
 
-The README main board is **grouped by output type**, provider as leading column within each group, flagship first:
+The README main board is **grouped by output type**, provider as leading column within each group:
 
-1. **Text-output models** — full column set: ID, Provider, Model, Context, $ input, $ output, Input, Capabilities/notes
-2. **Image-output models** — ID, Provider, Model, Billing, Input, Notes
+1. **Text-output models** — full column set: ID, Provider, Model, Released, Context, $ input, $ output, Input, Capabilities/notes
+2. **Image-output models** — ID, Provider, Model, Released, Billing, Input, Notes
 3. **Video-output models** — same reduced set
-4. **Audio models** — ID, Provider, Model, Billing, Input, Output, Notes
+4. **Audio models** — ID, Provider, Model, Released, Billing, Input, Output, Notes
+
+Ordering within a group: provider blocks in fixed order (OpenAI → Anthropic → Google → xAI → Moonshot → specialist vendors); within a block, premium tier first (flagship → mid → budget); same tier, newest Released first; struck-through rows sink to the bottom.
 
 Below the tables: benchmark section (points to `evals/`), selection guide, files list. Keep that order.
 
