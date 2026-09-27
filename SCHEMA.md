@@ -12,7 +12,7 @@ The patterns this matrix follows. Stay faithful to these definitions when adding
 | `released` | string | `YYYY-MM` or `preview` |
 | `context_tokens` | int \| null | Max context window; `null` if none |
 | `price_input` / `price_output` | float \| null | USD / 1M tokens; `null` for generation models + set `billing_unit` |
-| `billing_unit` | enum | `per_1m_tokens` (default) · `per_image` · `per_second` · `per_minute` |
+| `billing_unit` | enum | `per_1m_tokens` (default) · `per_image` · `per_second` · `per_minute` · `per_1k_chars` |
 | `input` | list | `text`, `image`, `audio`, `video`, `file` |
 | `output` | list | `text`, `audio`, `image`, `video` |
 | `tags` | list | From the tag set below |
@@ -42,7 +42,7 @@ The patterns this matrix follows. Stay faithful to these definitions when adding
 
 1. **If a price is unknown, write `null` — never guess.** A wrong price is worse than a missing one.
 2. **Only list modalities that actually ship.** "Coming soon" does not enter the list.
-3. **`status: sunset` models don't stay in the table** — only note them where a migration plan is needed.
+3. **`status: sunset` and superseded models stay in the table with a strikethrough** — visibility for history, but clearly unselectable. This sector moves fast; struck rows are how the board shows its age honestly. Remove them only after ~2 generations.
 4. The README main board is **grouped by output type** (Text-out · Image-out · Video-out · Audio), provider as a leading column within each group, flagship first. Don't regroup by provider.
 5. Update `source_date` with every change.
 

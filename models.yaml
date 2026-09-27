@@ -95,7 +95,22 @@ providers:
         tags: []
         open_weights: false
         best_for: "—"
-        notes: "API shuts down 2026-09-24; don't build new work on it"
+        notes: "Shut down 2026-09-24; row kept for reference only"
+        source_date: "2026-09"
+
+      - id: openai-tts
+        model: OpenAI TTS
+        released: "2025"
+        status: ga
+        context_tokens: null
+        price_input: null
+        price_output: null
+        billing_unit: per_1k_chars
+        input: [text]
+        output: [audio]
+        tags: [voice]
+        open_weights: false
+        best_for: "Low-latency speech synthesis (gpt-4o-mini-tts, tts-1-hd)"
         source_date: "2026-09"
 
   - name: Anthropic
@@ -283,4 +298,21 @@ providers:
         open_weights: false
         best_for: "Near-K3 coding at a much lower price"
         notes: "Auto-rolled out in Kimi Code; prices approximate"
+        source_date: "2026-09"
+
+  - name: ElevenLabs
+    models:
+      - id: elevenlabs-v3
+        model: ElevenLabs v3
+        released: "2026"
+        status: ga
+        context_tokens: null
+        price_input: null
+        price_output: null
+        billing_unit: per_1k_chars
+        input: [text]
+        output: [audio]
+        tags: [voice]
+        open_weights: false
+        best_for: "Expressive TTS, voice cloning, dubbing"
         source_date: "2026-09"

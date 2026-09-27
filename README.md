@@ -1,6 +1,6 @@
 # AI Model Comparison Matrix
 
-A maintained comparison of current models from five major providers: pricing, context windows, input/output modalities, and capability classifications. The board is grouped by output type — the axis on which model selection is usually made.
+A maintained comparison of current models from the major providers (plus specialist speech vendors): pricing, context windows, input/output modalities, and capability classifications. The board is grouped by output type — the axis on which model selection is usually made.
 
 Last updated: September 2026. Prices are USD per 1M tokens (input / output), verified against provider pricing pages and Artificial Analysis in September 2026.
 
@@ -11,7 +11,7 @@ Column definitions and data rules are in [SCHEMA.md](SCHEMA.md).
 - **Input / Output**: text, image, audio, video, file.
 - **Capabilities**: reasoning, agent (tool-use and multi-step work), computer-use (GUI control), coding, voice (native speech-to-speech), long-context (500K+), cheap-volume.
 - **ID**: normalized kebab-case key used as the join handle across all files in this repository. Platform-specific model strings (OpenRouter, Azure, Bedrock) may differ; verify per platform.
-- **Status**: models marked "sunset" have a confirmed shutdown date and should not be selected for new work.
+- **Status**: struck-through models are discontinued or shut down; the rows stay for reference but must not be selected for new work.
 
 ---
 
@@ -52,7 +52,7 @@ Provider notes:
 | ID | Provider | Model | Billing | Input | Notes |
 |---|---|---|---|---|---|
 | `veo-3-1` | Google | Veo 3.1 | per second | text, image | Enterprise option (GCP, SLA, SynthID); native audio |
-| `sora-2` | OpenAI | Sora 2 | per second | text, image | Sunset: API shuts down September 24, 2026 |
+| ~~`sora-2`~~ | OpenAI | ~~Sora 2~~ | per second | text, image | Shut down September 24, 2026 — row kept for reference |
 
 ## Audio models
 
@@ -60,6 +60,8 @@ Provider notes:
 |---|---|---|---|---|---|---|
 | `gemini-3-8-live` | Google | Gemini 3.8 Live (Extended Thinking) | per minute | audio | audio | Native speech-to-speech; #1 on the AA S2S quality index (82.6) |
 | `whisper-v4` | OpenAI | Whisper v4 | per minute | audio | text | De facto transcription standard |
+| `openai-tts` | OpenAI | OpenAI TTS (`gpt-4o-mini-tts`, `tts-1-hd`) | per 1K chars | text | audio | Low-latency speech synthesis API |
+| `elevenlabs-v3` | ElevenLabs | ElevenLabs v3 | per 1K chars | text | audio | Expressive TTS, voice cloning, dubbing |
 
 ---
 
