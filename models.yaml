@@ -1,0 +1,265 @@
+# AI model karşılaştırma verisi — Eylül 2026
+# Şema: SCHEMA.md. Fiyatlar USD/1M token (billing_unit'a bak).
+# Bu dosya agent'lar ve betikler için; insanlar README.md'deki tabloya baksın.
+
+providers:
+
+  - name: OpenAI
+    models:
+      - model: GPT-6 Astra
+        released: "2026-09"
+        status: ga
+        context_tokens: 1050000
+        price_input: 10.00
+        price_output: 50.00
+        billing_unit: per_1m_tokens
+        input: [text, image, file]
+        output: [text]
+        tags: [reasoning, agent, computer-use, coding]
+        open_weights: false
+        best_for: "En zor akıl yürütme, agentic kodlama, computer use"
+        notes: "Cache okuma ~$1/1M"
+        source_date: "2026-09"
+
+      - model: GPT-6 Sol
+        released: "2026-09"
+        status: ga
+        context_tokens: 1050000
+        price_input: 2.00
+        price_output: 10.00
+        input: [text, image, file]
+        output: [text]
+        tags: [agent, coding]
+        open_weights: false
+        best_for: "Kodlama ve agent işleri, Astra'nın yarı fiyatına"
+        source_date: "2026-09"
+
+      - model: GPT-6 Luna
+        released: "2026-09"
+        status: ga
+        context_tokens: 1050000
+        price_input: 0.10
+        price_output: 0.50
+        input: [text, image, file]
+        output: [text]
+        tags: [agent, cheap-volume]
+        open_weights: false
+        best_for: "Yüksek hacimli ucuz işler"
+        source_date: "2026-09"
+
+      - model: GPT Image 2
+        released: "2026"
+        status: ga
+        context_tokens: null
+        price_input: null
+        price_output: null
+        billing_unit: per_image
+        input: [text, image]
+        output: [image]
+        tags: []
+        open_weights: false
+        best_for: "Metin-doğruluğu en yüksek görsel üretim (AA Image Arena #1)"
+        source_date: "2026-09"
+
+      - model: Whisper v4
+        released: "2026"
+        status: ga
+        context_tokens: null
+        price_input: null
+        price_output: null
+        billing_unit: per_minute
+        input: [audio]
+        output: [text]
+        tags: []
+        open_weights: false
+        best_for: "Konuşma-transkripsiyon standardı"
+        source_date: "2026-09"
+
+      - model: Sora 2
+        released: "2026"
+        status: sunset
+        context_tokens: null
+        price_input: null
+        price_output: null
+        billing_unit: per_second
+        input: [text, image]
+        output: [video, audio]
+        tags: []
+        open_weights: false
+        best_for: "—"
+        notes: "API kapanışı 2026-09-24; üzerine yeni iş kurma"
+        source_date: "2026-09"
+
+  - name: Anthropic
+    models:
+      - model: Claude Fable 5.1
+        released: "2026-09"
+        status: ga
+        context_tokens: 1000000
+        price_input: 10.00
+        price_output: 50.00
+        input: [text, image, file]
+        output: [text]
+        tags: [reasoning, agent, computer-use, coding, long-context]
+        open_weights: false
+        best_for: "Uzun süreli otonom iş; en ucuz cache okuma ($0.25/1M)"
+        source_date: "2026-09"
+
+      - model: Claude Opus 5.5
+        released: "2026-09"
+        status: ga
+        context_tokens: 1000000
+        price_input: 4.00
+        price_output: 20.00
+        input: [text, image, file]
+        output: [text]
+        tags: [agent, computer-use, coding]
+        open_weights: false
+        best_for: "Claude Code varsayılanı; karmaşık kodlama"
+        source_date: "2026-09"
+
+      - model: Claude Sonnet 5
+        released: "2026-06"
+        status: ga
+        context_tokens: 1000000
+        price_input: 2.00
+        price_output: 10.00
+        input: [text, image, file]
+        output: [text]
+        tags: [agent, coding]
+        open_weights: false
+        best_for: "Günlük sürücü: kod, agent, yazı"
+        source_date: "2026-09"
+
+  - name: Google
+    models:
+      - model: Gemini 3.1 Pro
+        released: "2026-02"
+        status: preview
+        context_tokens: 200000
+        price_input: 2.00
+        price_output: 12.00
+        input: [text, image, audio, video, file]
+        output: [text]
+        tags: [reasoning, agent]
+        open_weights: false
+        best_for: "Araştırma; Search grounding ile doğruluk"
+        notes: "200K üstü kademeli fiyatlandırma"
+        source_date: "2026-09"
+
+      - model: Gemini 3.8 Flash
+        released: "2026-09"
+        status: ga
+        context_tokens: 1000000
+        price_input: 0.75
+        price_output: 3.75
+        input: [text, image, audio, video, file]
+        output: [text]
+        tags: [agent, cheap-volume, long-context]
+        open_weights: false
+        best_for: "Hızlı çok modlu hacim işleri, 1M bağlam"
+        notes: "Promo fiyat 2026 sonuna kadar"
+        source_date: "2026-09"
+
+      - model: Gemini 3.8 Live (Extended Thinking)
+        released: "2026-09"
+        status: ga
+        context_tokens: null
+        price_input: 0.005
+        price_output: 0.018
+        billing_unit: per_minute
+        input: [audio]
+        output: [audio]
+        tags: [voice]
+        open_weights: false
+        best_for: "Native speech-to-speech; S2S kalite endeksi #1"
+        source_date: "2026-09"
+
+      - model: Imagen (Nano Banana Pro)
+        released: "2026"
+        status: ga
+        context_tokens: null
+        price_input: null
+        price_output: null
+        billing_unit: per_image
+        input: [text, image]
+        output: [image]
+        tags: []
+        open_weights: false
+        best_for: "4K görsel ve görsel edit"
+        source_date: "2026-09"
+
+      - model: Veo 3.1
+        released: "2026"
+        status: ga
+        context_tokens: null
+        price_input: null
+        price_output: null
+        billing_unit: per_second
+        input: [text, image]
+        output: [video, audio]
+        tags: []
+        open_weights: false
+        best_for: "Kurumsal video (GCP, SLA, SynthID)"
+        source_date: "2026-09"
+
+  - name: xAI
+    models:
+      - model: Grok 4.7
+        released: "2026-09"
+        status: ga
+        context_tokens: 500000
+        price_input: 2.00
+        price_output: 6.00
+        input: [text, image, file]
+        output: [text]
+        tags: [agent, coding]
+        open_weights: false
+        best_for: "Fiyat/performans kodlama; canlı X verisi"
+        notes: "Cache isabet $0.50/1M"
+        source_date: "2026-09"
+
+      - model: Grok Imagine
+        released: "2026-05"
+        status: ga
+        context_tokens: null
+        price_input: null
+        price_output: null
+        billing_unit: per_image
+        input: [text, image]
+        output: [image, video]
+        tags: []
+        open_weights: false
+        best_for: "Görsel üretim + görsel→video"
+        source_date: "2026-09"
+
+  - name: Moonshot AI
+    models:
+      - model: Kimi K3
+        released: "2026-07"
+        status: ga
+        context_tokens: 1000000
+        price_input: 2.20
+        price_output: 8.00
+        input: [text, image, video, file]
+        output: [text]
+        tags: [reasoning, agent, coding, long-context]
+        open_weights: true
+        license: Kimi K3 License
+        best_for: "En güçlü açık ağırlıklı model; self-host seçeneği"
+        notes: "2.8T MoE / ~104B aktif; fiyatlar yaklaşık"
+        source_date: "2026-09"
+
+      - model: Kimi K2.8 Preview
+        released: "2026-09"
+        status: preview
+        context_tokens: 1000000
+        price_input: 0.60
+        price_output: 2.50
+        input: [text, image, video]
+        output: [text]
+        tags: [agent, coding, cheap-volume]
+        open_weights: false
+        best_for: "K3'e yakın kodlama, çok daha ucuz"
+        notes: "Kimi Code'da otomatik geçiş; fiyatlar yaklaşık"
+        source_date: "2026-09"
