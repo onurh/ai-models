@@ -1,318 +1,477 @@
-# AI model comparison data — September 2026
-# Schema: SCHEMA.md. Prices in USD/1M tokens (see billing_unit).
-# `id` is the normalized kebab-case join key used across all files in this repo.
-# Platform-specific model strings may differ (OpenRouter, Azure, Bedrock...) — verify per platform.
-# This file is for agents and scripts; humans should read the README.md tables.
-
 providers:
-
-  - name: OpenAI
-    models:
-      - id: gpt-6-astra
-        model: GPT-6 Astra
-        released: "2026-09"
-        status: ga
-        context_tokens: 1050000
-        price_input: 10.00
-        price_output: 50.00
-        billing_unit: per_1m_tokens
-        input: [text, image, file]
-        output: [text]
-        tags: [reasoning, agent, computer-use, coding]
-        open_weights: false
-        best_for: "Hardest reasoning, agentic coding, computer use"
-        notes: "Cache reads ~$1/1M"
-        source_date: "2026-09"
-
-      - id: gpt-6-sol
-        model: GPT-6 Sol
-        released: "2026-09"
-        status: ga
-        context_tokens: 1050000
-        price_input: 2.00
-        price_output: 10.00
-        input: [text, image, file]
-        output: [text]
-        tags: [agent, coding]
-        open_weights: false
-        best_for: "Coding and agent work at half of Astra's price"
-        source_date: "2026-09"
-
-      - id: gpt-6-luna
-        model: GPT-6 Luna
-        released: "2026-09"
-        status: ga
-        context_tokens: 1050000
-        price_input: 0.10
-        price_output: 0.50
-        input: [text, image, file]
-        output: [text]
-        tags: [agent, cheap-volume]
-        open_weights: false
-        best_for: "High-volume cheap work"
-        source_date: "2026-09"
-
-      - id: gpt-image-2
-        model: GPT Image 2
-        released: "2026"
-        status: ga
-        context_tokens: null
-        price_input: null
-        price_output: null
-        billing_unit: per_image
-        input: [text, image]
-        output: [image]
-        tags: []
-        open_weights: false
-        best_for: "Highest text-accuracy image generation (AA Image Arena #1)"
-        source_date: "2026-09"
-
-      - id: whisper-v4
-        model: Whisper v4
-        released: "2026"
-        status: ga
-        context_tokens: null
-        price_input: null
-        price_output: null
-        billing_unit: per_minute
-        input: [audio]
-        output: [text]
-        tags: []
-        open_weights: false
-        best_for: "Speech-to-text transcription standard"
-        source_date: "2026-09"
-
-      - id: sora-2
-        model: Sora 2
-        released: "2026"
-        status: sunset
-        context_tokens: null
-        price_input: null
-        price_output: null
-        billing_unit: per_second
-        input: [text, image]
-        output: [video, audio]
-        tags: []
-        open_weights: false
-        best_for: "—"
-        notes: "Shut down 2026-09-24; row kept for reference only"
-        source_date: "2026-09"
-
-      - id: openai-tts
-        model: OpenAI TTS
-        released: "2025"
-        status: ga
-        context_tokens: null
-        price_input: null
-        price_output: null
-        billing_unit: per_1k_chars
-        input: [text]
-        output: [audio]
-        tags: [voice]
-        open_weights: false
-        best_for: "Low-latency speech synthesis (gpt-4o-mini-tts, tts-1-hd)"
-        source_date: "2026-09"
-
-  - name: Anthropic
-    models:
-      - id: claude-fable-5-1
-        model: Claude Fable 5.1
-        released: "2026-09"
-        status: ga
-        context_tokens: 1000000
-        price_input: 10.00
-        price_output: 50.00
-        input: [text, image, file]
-        output: [text]
-        tags: [reasoning, agent, computer-use, coding, long-context]
-        open_weights: false
-        best_for: "Long-horizon autonomous work; cheapest cache reads ($0.25/1M)"
-        source_date: "2026-09"
-
-      - id: claude-opus-5-5
-        model: Claude Opus 5.5
-        released: "2026-09"
-        status: ga
-        context_tokens: 1000000
-        price_input: 4.00
-        price_output: 20.00
-        input: [text, image, file]
-        output: [text]
-        tags: [agent, computer-use, coding]
-        open_weights: false
-        best_for: "Claude Code default; complex coding"
-        source_date: "2026-09"
-
-      - id: claude-sonnet-5
-        model: Claude Sonnet 5
-        released: "2026-06"
-        status: ga
-        context_tokens: 1000000
-        price_input: 2.00
-        price_output: 10.00
-        input: [text, image, file]
-        output: [text]
-        tags: [agent, coding]
-        open_weights: false
-        best_for: "Daily driver: code, agents, writing"
-        source_date: "2026-09"
-
-  - name: Google
-    models:
-      - id: gemini-3-1-pro
-        model: Gemini 3.1 Pro
-        released: "2026-02"
-        status: preview
-        context_tokens: 200000
-        price_input: 2.00
-        price_output: 12.00
-        input: [text, image, audio, video, file]
-        output: [text]
-        tags: [reasoning, agent]
-        open_weights: false
-        best_for: "Research; accuracy with Search grounding"
-        notes: "Tiered pricing above 200K"
-        source_date: "2026-09"
-
-      - id: gemini-3-8-flash
-        model: Gemini 3.8 Flash
-        released: "2026-09"
-        status: ga
-        context_tokens: 1000000
-        price_input: 0.75
-        price_output: 3.75
-        input: [text, image, audio, video, file]
-        output: [text]
-        tags: [agent, cheap-volume, long-context]
-        open_weights: false
-        best_for: "Fast multimodal volume work, 1M context"
-        notes: "Promo price through end of 2026"
-        source_date: "2026-09"
-
-      - id: gemini-3-8-live
-        model: Gemini 3.8 Live (Extended Thinking)
-        released: "2026-09"
-        status: ga
-        context_tokens: null
-        price_input: 0.005
-        price_output: 0.018
-        billing_unit: per_minute
-        input: [audio]
-        output: [audio]
-        tags: [voice]
-        open_weights: false
-        best_for: "Native speech-to-speech; S2S quality index #1"
-        source_date: "2026-09"
-
-      - id: imagen-nano-banana-pro
-        model: Imagen (Nano Banana Pro)
-        released: "2026"
-        status: ga
-        context_tokens: null
-        price_input: null
-        price_output: null
-        billing_unit: per_image
-        input: [text, image]
-        output: [image]
-        tags: []
-        open_weights: false
-        best_for: "4K images and image editing"
-        notes: "Platform model string varies (image generation endpoint) — verify"
-        source_date: "2026-09"
-
-      - id: veo-3-1
-        model: Veo 3.1
-        released: "2026"
-        status: ga
-        context_tokens: null
-        price_input: null
-        price_output: null
-        billing_unit: per_second
-        input: [text, image]
-        output: [video, audio]
-        tags: []
-        open_weights: false
-        best_for: "Enterprise video (GCP, SLA, SynthID)"
-        source_date: "2026-09"
-
-  - name: xAI
-    models:
-      - id: grok-4-7
-        model: Grok 4.7
-        released: "2026-09"
-        status: ga
-        context_tokens: 500000
-        price_input: 2.00
-        price_output: 6.00
-        input: [text, image, file]
-        output: [text]
-        tags: [agent, coding]
-        open_weights: false
-        best_for: "Price/performance coding; live X data access"
-        notes: "Cache hits $0.50/1M"
-        source_date: "2026-09"
-
-      - id: grok-imagine
-        model: Grok Imagine
-        released: "2026-05"
-        status: ga
-        context_tokens: null
-        price_input: null
-        price_output: null
-        billing_unit: per_image
-        input: [text, image]
-        output: [image, video]
-        tags: []
-        open_weights: false
-        best_for: "Image generation + image-to-video"
-        source_date: "2026-09"
-
-  - name: Moonshot AI
-    models:
-      - id: kimi-k3
-        model: Kimi K3
-        released: "2026-07"
-        status: ga
-        context_tokens: 1000000
-        price_input: 2.20
-        price_output: 8.00
-        input: [text, image, video, file]
-        output: [text]
-        tags: [reasoning, agent, coding, long-context]
-        open_weights: true
-        license: Kimi K3 License
-        best_for: "Strongest open-weight model; self-host option"
-        notes: "2.8T MoE / ~104B active; prices approximate"
-        source_date: "2026-09"
-
-      - id: kimi-k2-8-preview
-        model: Kimi K2.8 Preview
-        released: "2026-09"
-        status: preview
-        context_tokens: 1000000
-        price_input: 0.60
-        price_output: 2.50
-        input: [text, image, video]
-        output: [text]
-        tags: [agent, coding, cheap-volume]
-        open_weights: false
-        best_for: "Near-K3 coding at a much lower price"
-        notes: "Auto-rolled out in Kimi Code; prices approximate"
-        source_date: "2026-09"
-
-  - name: ElevenLabs
-    models:
-      - id: elevenlabs-v3
-        model: ElevenLabs v3
-        released: "2026"
-        status: ga
-        context_tokens: null
-        price_input: null
-        price_output: null
-        billing_unit: per_1k_chars
-        input: [text]
-        output: [audio]
-        tags: [voice]
-        open_weights: false
-        best_for: "Expressive TTS, voice cloning, dubbing"
-        source_date: "2026-09"
+- name: OpenAI
+  models:
+  - id: gpt-6-astra
+    model: GPT-6 Astra
+    released: 2026-09
+    status: ga
+    context_tokens: 1050000
+    price_input: 10.0
+    price_output: 50.0
+    billing_unit: per_1m_tokens
+    input:
+    - text
+    - image
+    - file
+    output:
+    - text
+    tags:
+    - reasoning
+    - agent
+    - computer-use
+    - coding
+    open_weights: false
+    best_for: Hardest reasoning, agentic coding, computer use
+    notes: Cache reads ~$1/1M
+    source_date: 2026-09
+  - id: gpt-6-sol
+    model: GPT-6 Sol
+    released: 2026-09
+    status: ga
+    context_tokens: 1050000
+    price_input: 2.0
+    price_output: 10.0
+    input:
+    - text
+    - image
+    - file
+    output:
+    - text
+    tags:
+    - agent
+    - coding
+    open_weights: false
+    best_for: Coding and agent work at half of Astra's price
+    source_date: 2026-09
+  - id: gpt-6-luna
+    model: GPT-6 Luna
+    released: 2026-09
+    status: ga
+    context_tokens: 1050000
+    price_input: 0.1
+    price_output: 0.5
+    input:
+    - text
+    - image
+    - file
+    output:
+    - text
+    tags:
+    - agent
+    - cheap-volume
+    open_weights: false
+    best_for: High-volume cheap work
+    source_date: 2026-09
+  - id: gpt-image-2
+    model: GPT Image 2
+    released: '2026'
+    status: ga
+    context_tokens: null
+    price_input: null
+    price_output: null
+    billing_unit: per_image
+    input:
+    - text
+    - image
+    output:
+    - image
+    tags: []
+    open_weights: false
+    best_for: 'Highest text-accuracy image generation (AA Image Arena #1)'
+    source_date: 2026-09
+  - id: whisper-v4
+    model: Whisper v4
+    released: '2026'
+    status: ga
+    context_tokens: null
+    price_input: null
+    price_output: null
+    billing_unit: per_minute
+    input:
+    - audio
+    output:
+    - text
+    tags: []
+    open_weights: false
+    best_for: Speech-to-text transcription standard
+    source_date: 2026-09
+  - id: sora-2
+    model: Sora 2
+    released: '2026'
+    status: sunset
+    context_tokens: null
+    price_input: null
+    price_output: null
+    billing_unit: per_second
+    input:
+    - text
+    - image
+    output:
+    - video
+    - audio
+    tags: []
+    open_weights: false
+    best_for: "\u2014"
+    notes: Shut down 2026-09-24; row kept for reference only
+    source_date: 2026-09
+  - id: openai-tts
+    model: OpenAI TTS
+    released: '2025'
+    status: ga
+    context_tokens: null
+    price_input: null
+    price_output: null
+    billing_unit: per_1k_chars
+    input:
+    - text
+    output:
+    - audio
+    tags:
+    - voice
+    open_weights: false
+    best_for: Low-latency speech synthesis (gpt-4o-mini-tts, tts-1-hd)
+    source_date: 2026-09
+- name: Anthropic
+  models:
+  - id: claude-fable-5-1
+    model: Claude Fable 5.1
+    released: 2026-09
+    status: ga
+    context_tokens: 1000000
+    price_input: 10.0
+    price_output: 50.0
+    input:
+    - text
+    - image
+    - file
+    output:
+    - text
+    tags:
+    - reasoning
+    - agent
+    - computer-use
+    - coding
+    - long-context
+    open_weights: false
+    best_for: Long-horizon autonomous work; cheapest cache reads ($0.25/1M)
+    source_date: 2026-09
+  - id: claude-opus-5-5
+    model: Claude Opus 5.5
+    released: 2026-09
+    status: ga
+    context_tokens: 1000000
+    price_input: 4.0
+    price_output: 20.0
+    input:
+    - text
+    - image
+    - file
+    output:
+    - text
+    tags:
+    - agent
+    - computer-use
+    - coding
+    open_weights: false
+    best_for: Claude Code default; complex coding
+    source_date: 2026-09
+  - id: claude-sonnet-5
+    model: Claude Sonnet 5
+    released: 2026-06
+    status: ga
+    context_tokens: 1000000
+    price_input: 2.0
+    price_output: 10.0
+    input:
+    - text
+    - image
+    - file
+    output:
+    - text
+    tags:
+    - agent
+    - coding
+    open_weights: false
+    best_for: 'Daily driver: code, agents, writing'
+    source_date: 2026-09
+- name: Google
+  models:
+  - id: gemini-3-1-pro
+    model: Gemini 3.1 Pro
+    released: 2026-02
+    status: preview
+    context_tokens: 200000
+    price_input: 2.0
+    price_output: 12.0
+    input:
+    - text
+    - image
+    - audio
+    - video
+    - file
+    output:
+    - text
+    tags:
+    - reasoning
+    - agent
+    open_weights: false
+    best_for: Research; accuracy with Search grounding
+    notes: Tiered pricing above 200K
+    source_date: 2026-09
+  - id: gemini-3-8-flash
+    model: Gemini 3.8 Flash
+    released: 2026-09
+    status: ga
+    context_tokens: 1000000
+    price_input: 0.75
+    price_output: 3.75
+    input:
+    - text
+    - image
+    - audio
+    - video
+    - file
+    output:
+    - text
+    tags:
+    - agent
+    - cheap-volume
+    - long-context
+    open_weights: false
+    best_for: Fast multimodal volume work, 1M context
+    notes: Promo price through end of 2026
+    source_date: 2026-09
+  - id: gemini-3-8-live
+    model: Gemini 3.8 Live (Extended Thinking)
+    released: 2026-09
+    status: ga
+    context_tokens: null
+    price_input: 0.005
+    price_output: 0.018
+    billing_unit: per_minute
+    input:
+    - audio
+    output:
+    - audio
+    tags:
+    - voice
+    open_weights: false
+    best_for: 'Native speech-to-speech; S2S quality index #1'
+    source_date: 2026-09
+  - id: imagen-nano-banana-pro
+    model: Imagen (Nano Banana Pro)
+    released: '2026'
+    status: ga
+    context_tokens: null
+    price_input: null
+    price_output: null
+    billing_unit: per_image
+    input:
+    - text
+    - image
+    output:
+    - image
+    tags: []
+    open_weights: false
+    best_for: 4K images and image editing
+    notes: "Platform model string varies (image generation endpoint) \u2014 verify"
+    source_date: 2026-09
+  - id: veo-3-1
+    model: Veo 3.1
+    released: '2026'
+    status: ga
+    context_tokens: null
+    price_input: null
+    price_output: null
+    billing_unit: per_second
+    input:
+    - text
+    - image
+    output:
+    - video
+    - audio
+    tags: []
+    open_weights: false
+    best_for: Enterprise video (GCP, SLA, SynthID)
+    source_date: 2026-09
+  - id: google-chirp3-hd
+    model: Cloud TTS (Chirp 3 HD)
+    released: '2025'
+    status: ga
+    context_tokens: null
+    price_input: null
+    price_output: null
+    billing_unit: per_1m_chars
+    input:
+    - text
+    output:
+    - audio
+    tags:
+    - voice
+    open_weights: false
+    best_for: Google Cloud voice library, 60+ languages
+    source_date: 2026-09
+- name: xAI
+  models:
+  - id: grok-4-7
+    model: Grok 4.7
+    released: 2026-09
+    status: ga
+    context_tokens: 500000
+    price_input: 2.0
+    price_output: 6.0
+    input:
+    - text
+    - image
+    - file
+    output:
+    - text
+    tags:
+    - agent
+    - coding
+    open_weights: false
+    best_for: Price/performance coding; live X data access
+    notes: Cache hits $0.50/1M
+    source_date: 2026-09
+  - id: grok-imagine
+    model: Grok Imagine
+    released: 2026-05
+    status: ga
+    context_tokens: null
+    price_input: null
+    price_output: null
+    billing_unit: per_image
+    input:
+    - text
+    - image
+    output:
+    - image
+    - video
+    tags: []
+    open_weights: false
+    best_for: Image generation + image-to-video
+    source_date: 2026-09
+- name: Moonshot AI
+  models:
+  - id: kimi-k3
+    model: Kimi K3
+    released: 2026-07
+    status: ga
+    context_tokens: 1000000
+    price_input: 2.2
+    price_output: 8.0
+    input:
+    - text
+    - image
+    - video
+    - file
+    output:
+    - text
+    tags:
+    - reasoning
+    - agent
+    - coding
+    - long-context
+    open_weights: true
+    license: Kimi K3 License
+    best_for: Strongest open-weight model; self-host option
+    notes: 2.8T MoE / ~104B active; prices approximate
+    source_date: 2026-09
+  - id: kimi-k2-8-preview
+    model: Kimi K2.8 Preview
+    released: 2026-09
+    status: preview
+    context_tokens: 1000000
+    price_input: 0.6
+    price_output: 2.5
+    input:
+    - text
+    - image
+    - video
+    output:
+    - text
+    tags:
+    - agent
+    - coding
+    - cheap-volume
+    open_weights: false
+    best_for: Near-K3 coding at a much lower price
+    notes: Auto-rolled out in Kimi Code; prices approximate
+    source_date: 2026-09
+- name: ElevenLabs
+  models:
+  - id: elevenlabs-v3
+    model: ElevenLabs v3
+    released: '2026'
+    status: ga
+    context_tokens: null
+    price_input: null
+    price_output: null
+    billing_unit: per_1k_chars
+    input:
+    - text
+    output:
+    - audio
+    tags:
+    - voice
+    open_weights: false
+    best_for: Expressive TTS, voice cloning, dubbing
+    source_date: 2026-09
+- name: Microsoft
+  models:
+  - id: azure-speech-hd
+    model: Azure Speech (HD voices)
+    released: '2025'
+    status: ga
+    context_tokens: null
+    price_input: null
+    price_output: null
+    billing_unit: per_1k_chars
+    input:
+    - text
+    output:
+    - audio
+    tags:
+    - voice
+    open_weights: false
+    best_for: Enterprise TTS + real-time avatar
+    source_date: 2026-09
+    notes: per-hour billing on some plans
+- name: Cartesia
+  models:
+  - id: cartesia-sonic
+    model: Sonic
+    released: '2025'
+    status: ga
+    context_tokens: null
+    price_input: null
+    price_output: null
+    billing_unit: per_1k_chars
+    input:
+    - text
+    output:
+    - audio
+    tags:
+    - voice
+    open_weights: false
+    best_for: Low-latency streaming TTS (~100ms)
+    source_date: 2026-09
+- name: Play.ht
+  models:
+  - id: playht-v3
+    model: Play v3
+    released: '2025'
+    status: ga
+    context_tokens: null
+    price_input: null
+    price_output: null
+    billing_unit: per_1k_chars
+    input:
+    - text
+    output:
+    - audio
+    tags:
+    - voice
+    open_weights: false
+    best_for: Multi-lingual TTS with voice cloning
+    source_date: 2026-09

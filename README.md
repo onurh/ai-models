@@ -61,7 +61,11 @@ Provider notes:
 | `gemini-3-8-live` | Google | Gemini 3.8 Live (Extended Thinking) | per minute | audio | audio | Native speech-to-speech; #1 on the AA S2S quality index (82.6) |
 | `whisper-v4` | OpenAI | Whisper v4 | per minute | audio | text | De facto transcription standard |
 | `openai-tts` | OpenAI | OpenAI TTS (`gpt-4o-mini-tts`, `tts-1-hd`) | per 1K chars | text | audio | Low-latency speech synthesis API |
-| `elevenlabs-v3` | ElevenLabs | ElevenLabs v3 | per 1K chars | text | audio | Expressive TTS, voice cloning, dubbing |
+| `elevenlabs-v3` | ElevenLabs | ElevenLabs v3 | per 1K chars | text | audio | Expressive TTS, voice cloning, dubbing; strong multilingual incl. Turkish |
+| `google-chirp3-hd` | Google | Cloud TTS (Chirp 3 HD voices) | per 1M chars | text | audio | Google Cloud voice library, 60+ languages |
+| `azure-speech-hd` | Microsoft | Azure Speech (HD voices) | per hour / chars | text | audio | Enterprise TTS + real-time avatar; per-hour billing on some plans |
+| `cartesia-sonic` | Cartesia | Sonic | per 1K chars | text | audio | Low-latency streaming TTS (~100ms) |
+| `playht-v3` | Play.ht | Play v3 | per 1K chars | text | audio | Multi-lingual TTS with voice cloning |
 
 ---
 
