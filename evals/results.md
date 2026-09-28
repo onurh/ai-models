@@ -16,3 +16,5 @@ One row per run: model, prompt, observation. Always include the date; keep obser
 | 2026-09-27 | kimi-k2-8-preview | tr-register | Clean register shift with useful diff notes; but spelling answer wrong — confidently claimed TDK dropped the circumflex in 2012 (fabricated rule); K3's answer is the correct one |
 | 2026-09-27 | kimi-k3 | code-intervals | Output saved; correctness not yet manually verified |
 | 2026-09-27 | kimi-k2-8-preview | code-intervals | Output saved; correctness not yet manually verified |
+| 2026-09-28 | kimi-k3 | code-tests-01 | **Executable grade: PASS** — found the count-accumulation bug (`count * 10 + digit`), added the missing ValueError validation, all asserts pass when run |
+| 2026-09-28 | kimi-k2-8-preview | code-tests-01 | **Executable grade: PASS** — same correct fix and validation; all asserts pass when run |
