@@ -455,6 +455,25 @@ providers:
     best_for: Token-based TTS; AA Speech Arena Elo ~1,260
     notes: Audio metered at 25 tokens/sec; promo rates through 2026-12-31, then $1/$18; ~$16.50/1M chars per AA estimate
     source_date: 2026-09
+  - id: gemini-3-8-flash-lite-tts
+    model: Gemini 3.8 Flash-Lite TTS
+    released: 2026-09
+    status: ga
+    context_tokens: null
+    price_input: 0.5
+    price_output: 6.0
+    billing_unit: per_1m_tokens
+    input:
+    - text
+    output:
+    - audio
+    tags:
+    - voice
+    - cheap-volume
+    open_weights: false
+    best_for: Cheapest near-top-quality TTS (AA Speech Elo ~1,235)
+    notes: Audio metered at 25 tokens/sec; promo rates through 2026-12-31, then $1/$12; ~$11/1M chars per AA estimate
+    source_date: 2026-09
 - name: xAI
   models:
   - id: grok-4-7
