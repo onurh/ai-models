@@ -56,7 +56,7 @@ Provider notes:
 - **Anthropic** does not offer image generation or TTS. ChatGPT voice mode is a text model with a separate audio layer; OpenAI offers a TTS API separately.
 - **xAI** provides live X data access and the most permissive content policy in the frontier tier.
 - **Moonshot** rolled K2.8 Preview out automatically to Kimi Code users.
-- **Antigravity is not listed here on purpose**: it is Google's agentic IDE (a VS Code fork launched Nov 2025 with Gemini 3), not a model — it orchestrates Gemini, Claude, and GPT-OSS agents. This board tracks models, not harnesses.
+- **Antigravity is not listed here on purpose**: it is Google's agentic IDE (a VS Code fork launched Nov 2025 with Gemini 3), not a model — it orchestrates Gemini, Claude, and GPT-OSS agents. This board tracks models, not harnesses. Its model picker (Sep 2026: Gemini 3.5–3.8 Flash, Gemini 3.1 Pro, Claude Sonnet/Opus 4.6, GPT-OSS-120B, curated via Vertex Model Garden, no BYOK) visibly lags the API lineup this board tracks.
 - Deliberately omitted: Gemini 3.5 Pro (announced, not yet shipped — "coming soon" never enters the board) and GPT-5.5 (two generations behind).
 
 ## Image-output models
