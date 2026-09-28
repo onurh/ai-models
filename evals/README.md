@@ -25,4 +25,5 @@ A small test bench, not a leaderboard. The purpose is to run the same prompts ac
 | reason-batball | reasoning | Classic cognitive-reflection traps |
 | instr-constraints | instruction-following | Multi-constraint generation with a banned letter |
 | tool-sequence | agent | Correct tool-call ordering, ignoring irrelevant tools |
+| code-tests-01 | coding | Buggy RLE decoder fixed against executable asserts — grader runs the output |
 | tr-register | multilingual | Turkish register shift and spelling-rule knowledge |
