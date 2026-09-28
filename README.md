@@ -113,12 +113,11 @@ The benchmark is a small, manual test bench rather than a leaderboard. Prompts l
 - [models.yaml](models.yaml) — machine-readable version of the pricing and modality matrix
 - [evals/](evals/) — benchmark prompts, saved outputs, and observation log
 - [SCHEMA.md](SCHEMA.md) — field definitions and data rules
-- [scripts/audit.py](scripts/audit.py) — monthly health check (`python3 scripts/audit.py`)
 - [LICENSE](LICENSE) — MIT
 
 ## Contributing
 
-PRs welcome. Every change must satisfy [SCHEMA.md](SCHEMA.md) — run `python3 scripts/audit.py` before opening a PR. Data rules in short: never guess prices, only list shipped capabilities, cite the month you verified (`source_date`), and keep the board a curated shortlist of well-known providers.
+PRs welcome. Every change must satisfy [SCHEMA.md](SCHEMA.md). Data rules in short: never guess prices, only list shipped capabilities, cite the month you verified (`source_date`), and keep the board a curated shortlist of well-known providers.
 
 ---
 
