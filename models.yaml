@@ -194,6 +194,24 @@ providers:
     best_for: Low-latency speech synthesis (gpt-4o-mini-tts, tts-1-hd)
     source_date: 2026-09
     notes: tts-1 $15/1M chars, tts-1-hd $30/1M chars; gpt-4o-mini-tts $0.60 in / $12 out per 1M tokens (~$0.015/min)
+  - id: gpt-live-1
+    model: GPT-Live-1
+    released: '2026'
+    status: ga
+    context_tokens: null
+    price_input: 0.05
+    price_output: null
+    billing_unit: per_minute
+    input:
+    - audio
+    output:
+    - audio
+    tags:
+    - voice
+    open_weights: false
+    best_for: OpenAI speech-to-speech; voice agents
+    notes: ~$0.05/min plus the reasoning model cost; price approximate
+    source_date: 2026-09
 - name: Anthropic
   models:
   - id: claude-fable-5-1
@@ -645,4 +663,22 @@ providers:
     open_weights: false
     best_for: Expressive TTS, voice cloning, dubbing
     source_date: 2026-09
-    notes: $0.10/1K chars ($100/1M); Flash/Turbo $0.05/1K
+    notes: $0.10/1K chars ($100/1M); Flash/Turbo $0.05/1K Superseded by Eleven v4
+  - id: elevenlabs-v4
+    model: ElevenLabs v4
+    released: 2026-09
+    status: ga
+    context_tokens: null
+    price_input: null
+    price_output: null
+    billing_unit: per_1m_chars
+    input:
+    - text
+    output:
+    - audio
+    tags:
+    - voice
+    open_weights: false
+    best_for: 'Most expressive TTS; #1 on the AA TTS arena (Elo ~1,319)'
+    notes: $80/1M chars ($0.08/1K); replaces Eleven v3
+    source_date: 2026-09
